@@ -1,0 +1,25 @@
+##### 显示的优先级
+1. 如果下级视图有自定义的leftBarButtonItem，就显示这个按钮
+2. 如果下级视图没有自定义的leftBarButtonItem，但是上级视图有自定义的backBarButtonItem就显示上级视图的
+3. 如果前两条都没有则显示默认的后退按钮，标题为上级视图的title, 若上级视图没有title则显示为back
+
+##### 几种方式
+1. 自定义navigationItem.backBarButtonItem (基类)
+	-. 无法改掉系统的返回图片，只能修改title
+	-. 无法改掉点击返回按钮的操作，不能重新定义target－action
+
+2. 只改变返回图片,同时执行下面两个
+	-. [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"back"]];
+    -. [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"back"]];
+    -. 图片颜色会变成自己定义的返回按钮的颜色
+
+3. 自定义下级视图的leftBarButtonItem (基类)
+	-. 导致系统自带的滑动返回失效，几个解决方案如下
+		-. [1](http://www.jianshu.com/p/50e318ebf964)
+		-. [2](http://www.jianshu.com/p/d39f7d22db6c)
+		-. [3](http://blog.sunnyxx.com/2015/06/07/fullscreen-pop-gesture/)
+
+
+##### 参考
+1. [link1](http://zgia.net/?p=306)
+2. [link2](http://www.cocoachina.com/industry/20131104/7287.html?utm_source=tuicool)

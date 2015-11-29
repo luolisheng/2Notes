@@ -1,0 +1,8 @@
+1. Content Compression Resistance 内容反压缩
+	- 优先级越大越不容易被压小
+2. Content Hugging Priority 内容反拉伸
+	- 优先级越大越不容易被拉伸
+3. 主要用于在父试图变大或缩小时子视图的变化
+
+##### 参考
+[link1](http://codingobjc.com/blog/2015/01/28/autolayoutzhong-de-content-compression-resistancehe-content-huggingdao-di-shi-shi-yao-yi-si/)

@@ -1,0 +1,9 @@
+##### Apple提供三种方式
+1. Bitcode
+
+2. 资源切片Slicing。 放在AssetCatalog里的图片, 可以通过打上标签, 让不同的设备在下载app的时候, 选择该设备需要的图片。Apple服务会自动对安装包切割为不同的应用变体(App variant)，当用户下载安装包时，系统会根据设备型号下载安装对应的单个应用变体。
+
+3. 按需加载资源。在app下载安装完成之后, app store可以存储一些额外的资源. 这些资源可以打上标签, 按照一定的策略和控制进行下载，而在存储空间不足时，自动删除这类资源。
+
+##### 参考
+1. [link1](http://benbeng.leanote.com/post/On-Demand-Resources-Guide)
