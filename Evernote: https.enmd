@@ -1,0 +1,31 @@
+---
+title: https
+tags: ["iOS"]
+notebook: iOS
+---
+
+### 参考
+
+1. [link1](http://www.jianshu.com/p/75d96b72bfb1)
+2. [link2](http://blog.csdn.net/clh604/article/details/22179907)
+3. [link2](http://www.cnblogs.com/zhuqil/archive/2012/07/23/2604572.html)
+3. [link3](http://blog.jobbole.com/105405/)
+4. [link4](https://zhuanlan.zhihu.com/p/22749689)
+5. [link5](https://github.com/ChenYilong/iOS9AdaptationTips)
+6. [link6](http://www.ruanyifeng.com/blog/2016/08/migrate-from-http-to-https.html)
+7. [link7](https://onevcat.com/2016/06/ios-10-ats/)
+8. [link8(详情)](http://oncenote.com/2014/10/21/Security-1-HTTPS/)
+9. [link9](http://oncenote.com/2015/09/16/Security-2-HTTPS2/) 
+10. [link9(中间人攻击)](http://mrpeak.cn/blog/mitmproxy/)
+
+### 过程
+
+SSL/TSL通过四次握手，主要交换3个信息
+1. 数字证书，证书中包含公钥
+2. 三个随机数，构成对称加密解密的‘对话密钥’
+3. 加密通信协议
+
+### 验证证书
+
+1. 解决自建证书问题
+2. 解决信任CA签发的其他证书

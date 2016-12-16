@@ -1,4 +1,13 @@
+---
+title: 制作动态、静态framework和静态库(.a)
+tags: ["iOS"]
+notebook: iOS
+---
+
 ###参考
-1. [link1](http://years.im/Home/Article/detail/id/52.html)
-2. [link2](http://www.jianshu.com/p/ef3d5b7e7006)
-3. [link3](http://www.cnblogs.com/apem/p/4569502.html)
+
+  1. [link1](http://years.im/Home/Article/detail/id/52.html)
+  2. [link2](http://www.jianshu.com/p/ef3d5b7e7006)
+  3. [link3](http://www.cnblogs.com/apem/p/4569502.html)
+  4. [link4](https://www.gitbook.com/book/leon_lizi/-framework-/details)
+  5. [link5](http://www.jianshu.com/p/48aff237e8ff?utm_campaign=maleskine&utm_content=note&utm_medium=writer_share&utm_source=weibo)
