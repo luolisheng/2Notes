@@ -1,0 +1,20 @@
+---
+title: OClint
+tags: ["iOS"]
+notebook: iOS
+---
+
+###
+
+解决问题：
+1. xcodebuild问题，指定workspace同时要指定target
+2. oclint-xcodebuild不在使用了，需要安装xcpretty,使用xcpretty命令分析日志信息
+3. 脚本化，脚本中输入权限密码
+
+### 参考
+1. [link1](http://stackoverflow.com/questions/30052657/how-to-use-cocoapods-integrated-project-with-oclint)
+2. [link1](http://blog.csdn.net/cyuyanenen/article/details/52265892?utm_source=itdadao&utm_medium=referral)
+2. [link2](https://segmentfault.com/a/1190000005150573)
+3. [link3](https://segmentfault.com/a/1190000004950264)
+4. [link4](http://www.tanhui.bid/oclint/ci/2016/10/31/oclint-%E4%BD%BF%E7%94%A8)
+5. [link5](http://blog.csdn.net/uxyheaven/article/details/50818107)
