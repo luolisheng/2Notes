@@ -1,0 +1,66 @@
+---
+title: weakSelf and strongSelf
+tags: []
+notebook: iOS
+---
+
+
+<en-media style="height: auto;" type="image/jpeg" hash="f85f696c512025ededaa584cfc48d618"/>  
+
+
+这是一种 强引用 --> 弱引用 --> 强引用 的变换过程。  
+
+
+作用如下：
+
+  1. 防止block在执行的时候被释放掉
+  2. 防止多线程时block在另外线程执行self被释，wself是弱引用自动变为nil，导致崩溃
+
+  
+
+
+在Block 中使用typeof(self) 不会造成循环引用。因为typeof操作符的计算发生在编译时，而不是运行时，typeof应该只是一个宏，编译的时候已经替换了  
+
+
+  
+
+
+问题：
+
+Q1： 将一个弱引用的指针赋值给强引用的指针，可以起到强引用效果么？
+
+A1：引用计数描述的是对象而不是指针，sself 强引用 wself 指向的那个对象，因此对象的引用计数会增加一个。
+
+  
+
+
+Q2：block 内部定义了sself，会不会因此强引用了 sself？
+
+A2：block 只有截获外部变量时，才会引用它。如果是内部新建一个，则没有任何问题。
+
+  
+
+
+Q3：那按照这个说法，block 内部强引用也没用啊。也许 block 执行以前，self 就释放了
+
+A3：如果在 block 执行以前，self 就释放了，那么 block 的引用计数降为 0，所以自己就会被释放。这样它根本就不会被执行。另外，如果执行一个为 nil 的闭包会导致崩溃。
+
+  
+
+
+Q4：如果在执行 block 的过程中，block 被释放了怎么办？
+
+A4：简单来说，block 还会继续执行，但是它捕获的指针会具有不确定的值，详细内容请参考
+
+<http://stackoverflow.com/questions/12272783/what-happens-when-a-block-is-set-to-nil-during-its-execution>
+
+  
+
+
+参考
+
+<http://www.jianshu.com/p/4ec18161d790>  
+<https://github.com/ChenYilong/iOSBlog/blob/master/Tips/Heap-Stack%20Dance/Heap-Stack%20Dance.md>
+
+  
+
