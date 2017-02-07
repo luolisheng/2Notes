@@ -6,18 +6,29 @@ notebook: luolisheng 的笔记本
 
 ### 三次握手（客户端发起）
 
-1. 客户端发送SYN=1、序列号Seq=0(A)，表示客户端想要建立连接。
-2. 服务端返回ACK=1(A+1)、SYN=1、序列号Seq=0(B)，表示服务端也想建立连接。
-3. 客户端发送ACK=1(B+1)、Seq=1，确认建立连接。
+  1. 客户端发送SYN=1、序列号Seq=0(A)，表示客户端想要建立连接。
+  2. 服务端返回ACK=1(A+1)、SYN=1、序列号Seq=0(B)，表示服务端也想建立连接。
+  3. 客户端发送ACK=1(B+1)、Seq=1，确认建立连接。
 
 ### 四次挥手（双方都可发起）
 
-1. 发送方FIN=1、ACK=1、序列号seq=A，想要结束连接。
-2. 接收方发送ACK=1、确认号=A+1，表示还未准备好结束连接。
-3. 接收方发送FIN=1、ACK=1、序列号seq=B，表示准备好结束连接。
-4. 发送方ACK=1、确认号=B+1，确认结束连接。
+  1. 发送方FIN=1、Seq=A、ACK=B，想要结束连接。
+  2. 接收方发送ACK=A+1、，表示还未准备好结束连接。
+  3. 接收方发送FIN=1、ACK=A+1、序列号Seq=B，表示准备好结束连接。
+  4. 发送方ACK=B+1、Seq=A+1，确认结束连接。
 
 ### 参考
-1. [link1](http://blog.mrriddler.com/2017/01/13/TCP:IP%E6%BC%AB%E6%B8%B8/)
-2. [link2](http://mrpeak.cn/blog/tutorial-tcpdump/)
-3. [link3](http://blog.csdn.net/a19881029/article/details/38091243)
+
+  1. [link1](http://blog.mrriddler.com/2017/01/13/TCP:IP%E6%BC%AB%E6%B8%B8/)
+  2. [link2](http://mrpeak.cn/blog/tutorial-tcpdump/)
+  3. [link3](http://blog.csdn.net/a19881029/article/details/38091243)
+
+  
+
+<en-media type="image/png" hash="bc088e0d6daace962eb0dd4b11fdc8cd"/>
+
+  
+
+
+  
+
