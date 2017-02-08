@@ -1,0 +1,17 @@
+### Array
+
+@interface NSArray<__covariant ObjectType> : NSObject <NSCopying, NSMutableCopying, NSSecureCoding, NSFastEnumeration>
+
+- (id)copy;            //浅复制
+- (id)mutableCopy;     //深复制出NSMutableArray
+  
+@end
+  
+@interface NSMutableArray<ObjectType> : NSArray<ObjectType>
+
+- (id)copy;           //深复制出NSArry(快照)
+- (id)mutableCopy;    //深复制出NSMutableArray(另一条时间线)
+  
+@end
+
+### Dictionry
