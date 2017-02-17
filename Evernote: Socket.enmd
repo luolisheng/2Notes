@@ -1,4 +1,11 @@
+---
+title: Socket
+tags: ["iOS"]
+notebook: iOS
+---
+
 ### 参考
 
 1. [link1](http://www.jianshu.com/p/3e4f3de18e3b)
 2. [link2](https://github.com/ChenYilong/iOSBlog/blob/master/Tips/%E5%A4%A7%E8%AF%9DSocket.md)
+3. [link3(流socket和数据报socket)](http://blog.sina.com.cn/s/blog_436499570100zkku.html)
