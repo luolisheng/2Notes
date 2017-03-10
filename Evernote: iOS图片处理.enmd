@@ -4,8 +4,17 @@ tags: ["iOS"]
 notebook: iOS
 ---
 
+### 图片加载过程
+1. 从磁盘拷贝数据到内核缓冲区
+2. 从内核缓冲区复制数据到用户空间
+3. 如果图像为未解码的PNG/JPG，要先解码为位图数据。解码操作是比较耗时的，并且没有GPU硬解码，只能通过CPU
+4. 主线程Runloop提交CATransaction，开始进行图像渲染
+	1. 如果数据没有字节对齐，Core Animation会再拷贝一份数据，进行字节对齐
+	2. GPU处理位图数据，进行渲染 
+
 ### 参考
 
 1. [link1](http://blog.ibireme.com/2015/11/02/ios_image_tips/)
 2. [link2](http://blog.mrriddler.com/2016/07/20/iOS%E4%B8%AD%E7%9A%84imageIO%E4%B8%8Eimage%E8%A7%A3%E7%A0%81/)
 3. [link3](http://blog.mrriddler.com/2016/07/20/%E5%9B%BE%E7%89%87%E4%B9%8B%E6%97%85/)
+4. [link4](http://blog.cnbang.net/tech/2578/)
