@@ -1,0 +1,6 @@
+### 
+1. 非法字符在不同的操作系统有不同的解析，规定使用percent encode编码，对非法字符的编码结果为三个字节（%+16进制字符*2）
+2. percent编码是在对非法字符采用某种编码（约定为UTF8）字符流转成字节流后，逐字节加上%构成percent编码
+
+### 参考
+1. [link1](http://www.cnblogs.com/hushuai-ios/p/5500162.html)
