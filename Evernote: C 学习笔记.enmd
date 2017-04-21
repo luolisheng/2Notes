@@ -42,6 +42,7 @@ char
 
 12：C字符串（ASCII中的字符数组，以0结尾）
 13：以"＃"开头的代码行都是预处理器指令 <#import XX>
+14. static [参考](http://blog.csdn.net/keyeagle/article/details/6708077/)
 
 <http://www.kuqin.com/shuoit/20161209/353150.html>  
 <http://www.cnblogs.com/li-peng/p/4116349.html>

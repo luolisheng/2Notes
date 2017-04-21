@@ -1,0 +1,68 @@
+### 2017-04-14
+1. 自我介绍
+2. runtime的运用
+	1. [link1](http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/)
+3. runloop
+	1. 自动释放池、延迟回调、触摸事件、屏幕刷新等基于runloop实现。
+	2. 线程和runloop是一一对应的，其关系是保存在一个全局的字典里。
+	3. 线程刚创建时没有runloop，如果不主动创建一直就不会有。
+	4. runloop的创建发生在第一次获取时，销毁发生在线程结束时。
+4. 事件传递及响应
+5. 浅拷贝和深拷贝
+	1. [link1](https://www.zybuluo.com/MicroCai/note/50592)
+	2. [link2](http://blog.csdn.net/qq_18425655/article/details/51325921)
+6. 多线程运用／GCD队列／实现线程依赖
+7. 数组和链表
+8. 对象在内存中的位置
+9. 消息转发机制
+	1. [link1](http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/)
+10. Autorelease Pool工作原理和使用场景、引用计数为0时什么时候释放对象
+	1. [link1](http://blog.leichunfeng.com/blog/2015/05/31/objective-c-autorelease-pool-implementation-principle/)
+	2. [link2](http://blog.sunnyxx.com/2014/10/15/behind-autorelease/#jtss-tsina)
+	3. [link3](http://yangchao0033.github.io/blog/2015/12/31/guan-yu-at-autoreleasepoolde-ce-shi-ji-shi-yong/)
+	4. 手动加的Autorelease Pool，在使用结束时清空一次。
+	5. 每次runloop迭代开始前系统自动创建Autorelease Pool，迭代结束时清空Autorelease Pool。
+11. 类别覆盖类方法、类别方法重复定义
+	1. [link1](http://tech.meituan.com/DiveIntoCategory.html)
+	2. [link2](http://blog.leichunfeng.com/blog/2015/05/18/objective-c-category-implementation-principle/)
+	3. [link3](http://tech.meituan.com/DiveIntoCategory.html)
+	4. 类别覆盖了原始类中已经实现的方法则没有任何办法再调用原始方法了。
+		1. category的方法没有“完全替换掉”原来类已经有的方法，类的方法列表里会有两个method。
+		2. category的方法被放到了新方法列表的前面，而原来类的方法被放到了新方法列表的后面，方法查找的时候是按方法列表顺序查找，找到之后就返回。
+	5. 同一个类不同的类别实现了相同的方法则会使用最后一个编译的category的方法。
+	6. category的load方法不会覆盖类的load的方法。
+		1. load的方法跟普通方法一样会对主类覆盖。
+		2. runtime调用load方法时是直接使用指针进行调用的。
+		3. 手动给主类发送load消息实际上调用的是category中的load。
+	7. category和extension的区别
+		1. extension在编译期就确定，它是类的一部分，跟随类产生和消亡。
+		2. extension用于隐藏类的私有消息，只有类的源码才能为类添加extension。
+		3. category在运行时确定，所以category不能添加实例变量，因为在运行时对象的内存布局已经确定，添加实例变量会破坏类的内存布局。
+12. 蓝牙
+13. 堆和栈的区别
+	1. 栈是一个用来存储局部和临时变量的存储空间。
+		1. 一个线程会分配一个栈。
+		2. 一个函数被调用，一个栈帧stack frame会被压到栈中。包括函数涉及到的参数、局部变量、返回地址等。
+		3. 函数返回后，栈帧被销毁。
+		4. iOS主线程分配栈空间1M，其他线程分配栈空间512K，OSX主线程分配栈空间8M。
+		5. 栈中分配对象不太现实。
+	2. 在堆上我们可以任何时候分配内存空间以及释放销毁它。
+		1. 堆上必须显示的请求分配内存空间 malloc。
+		2. 不用垃圾回收机制必须显示的释放它 free。
+	3. Objective-C不支持创建栈对象。
+	4. 对象是结构体，占一段连续的内存区域。
+		1. 指向对象的指针存储在栈上
+		2. 对象存储在堆上
+	5. 
+	6. [link1](http://kali.leanote.com/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8Objective-C%E4%B8%AD%E5%8F%AA%E4%BC%9A%E4%BD%BF%E7%94%A8%E5%A0%86%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1%E8%80%8C%E4%B8%8D%E4%BD%BF%E7%94%A8%E6%A0%88%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1)
+	7. [link2](http://foggry.com/blog/2017/02/06/wei-shi-yao-objective-c-dui-xiang-cun-chu-zai-dui-shang-er-bu-shi-zhan-shang/)
+
+
+### 通用算法
+1. [link1(查找)](http://www.cnblogs.com/Kobe10/p/6053131.html)
+2. [link2(排序)](http://www.jcodecraeer.com/a/chengxusheji/shejimoshi/2015/0527/2941.html)
+
+
+
+### 参考
+1. [link1](https://mp.weixin.qq.com/s/lSg6EFcaSoVtlLcpfTBedA)
