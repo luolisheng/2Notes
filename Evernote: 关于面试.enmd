@@ -8,6 +8,9 @@
 	3. 线程刚创建时没有runloop，如果不主动创建一直就不会有。
 	4. runloop的创建发生在第一次获取时，销毁发生在线程结束时。
 4. 事件传递及响应
+	1. 事件分三类：触摸事件、加速计事件、远程控制事件。
+	2. 只有继承自UIResponder的对象才能接收并响应事件。
+	3. 
 5. 浅拷贝和深拷贝
 	1. [link1](https://www.zybuluo.com/MicroCai/note/50592)
 	2. [link2](http://blog.csdn.net/qq_18425655/article/details/51325921)
@@ -51,11 +54,14 @@
 		2. 不用垃圾回收机制必须显示的释放它 free。
 	3. Objective-C不支持创建栈对象。
 	4. 对象是结构体，占一段连续的内存区域。
-		1. 指向对象的指针存储在栈上
-		2. 对象存储在堆上
-	5. 
+		1. 指向对象的指针存储在栈上。
+		2. 对象存储在堆上。
+	5. 栈是一块连续的内存区域，栈顶的地址和栈的最大容量是系统预先规定好的。
+		1. 如果申请的空间超过栈的剩余空间时，例如递归深度过深，将提示stackoverflow。
+		2. 栈是机器系统提供的数据结构，计算机会在底层对栈提供支持：分配专门的寄存器存放栈的地址，压栈出栈都有专门的指令执行，这就决定了栈的效率比较高。
 	6. [link1](http://kali.leanote.com/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8Objective-C%E4%B8%AD%E5%8F%AA%E4%BC%9A%E4%BD%BF%E7%94%A8%E5%A0%86%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1%E8%80%8C%E4%B8%8D%E4%BD%BF%E7%94%A8%E6%A0%88%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1)
 	7. [link2](http://foggry.com/blog/2017/02/06/wei-shi-yao-objective-c-dui-xiang-cun-chu-zai-dui-shang-er-bu-shi-zhan-shang/)
+	8. [link8](https://hit-alibaba.github.io/interview/basic/arch/Memory-Management.html#程序可执行文件的结构)
 
 
 ### 通用算法
