@@ -4,13 +4,40 @@
 	1. [link1](http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/)
 3. runloop
 	1. 自动释放池、延迟回调、触摸事件、屏幕刷新等基于runloop实现。
-	2. 线程和runloop是一一对应的，其关系是保存在一个全局的字典里。
+	2. 线程和runloop是一一对应的，其关系是保存在一个全局的字典里，一个线程不一定只有一个runloop，runloop可以嵌套。
 	3. 线程刚创建时没有runloop，如果不主动创建一直就不会有。
 	4. runloop的创建发生在第一次获取时，销毁发生在线程结束时。
+	5. [link1](https://www.zybuluo.com/qidiandasheng/note/346387)
+	6. [link2](http://blog.ibireme.com/2015/05/18/runloop/)
+	7. [link3](http://www.jianshu.com/p/4d5b6fc33519)
 4. 事件传递及响应
 	1. 事件分三类：触摸事件、加速计事件、远程控制事件。
 	2. 只有继承自UIResponder的对象才能接收并响应事件。
-	3. 
+	3. 触摸事件产生和传递。
+		1. 一个硬件事件发生之后，系统将该事件加入到UIApplication管理的事件队列。
+			1. IOKit.framework生成一个IOHIDEvent事件并由SpringBoard接收。
+			2. 随后用 mach port 转发给需要的App进程。
+			3. runloop调用_UIApplicationHandleEventQueue()进行分发。
+			4. _UIApplicationHandleEventQueue() 会把 IOHIDEvent 处理并包装成 UIEvent 进行处理或分发。
+		2. UIApplication从队列中取出最前面的事件并分发给keywindow处理。
+		3. keywindow会在视图层次结构中找到最合适的视图来处理触摸事件。
+			1. 先查看自己能否接收触摸事件，自己不接收则返回nil。
+			2. 再检查触摸点是否在自己身上，不在自己身上则返回nil。
+			3. 然后遍历子控件，重复1、2步骤。
+			4. 最后没有合适的子控件就是自己最合适处理。
+		4. 找到合适的视图之后就会调用视图控件的touches方法来做事件处理。
+		5. touches方法的默认做法是将事件顺着响应者链向上传递。
+			1. 默认调用[super touch...]，调用上一个响应者的touch方法。
+	4. 不接受触摸事件的几种情况。
+		1. 不接收交互userInteractionEnabled = NO。
+		2. 隐藏 hidden=YES。
+		3. 透明。
+	5. 响应者链的事件传递过程
+		1. 当前view是控制器的view，控制器就是上一个响应者；当前这个view不是控制器的view，那么父控件就是上一个响应者。
+		2. 最顶层视图也不能处理接收到的事件则传递给window对象处理。
+		3. window对象也不处理则传递给UIApplication对象。
+		4. UIApplication也不能处理消息则将其丢弃。
+	6. [link1](http://www.jianshu.com/p/82024d85c529)
 5. 浅拷贝和深拷贝
 	1. [link1](https://www.zybuluo.com/MicroCai/note/50592)
 	2. [link2](http://blog.csdn.net/qq_18425655/article/details/51325921)
@@ -63,12 +90,14 @@
 	7. [link2](http://foggry.com/blog/2017/02/06/wei-shi-yao-objective-c-dui-xiang-cun-chu-zai-dui-shang-er-bu-shi-zhan-shang/)
 	8. [link8](https://hit-alibaba.github.io/interview/basic/arch/Memory-Management.html#程序可执行文件的结构)
 
+14. 应用安全
+	1. 安全方案
+	2. 安全评测
+15. get/post区别
 
 ### 通用算法
 1. [link1(查找)](http://www.cnblogs.com/Kobe10/p/6053131.html)
 2. [link2(排序)](http://www.jcodecraeer.com/a/chengxusheji/shejimoshi/2015/0527/2941.html)
-
-
 
 ### 参考
 1. [link1](https://mp.weixin.qq.com/s/lSg6EFcaSoVtlLcpfTBedA)
