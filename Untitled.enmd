@@ -4,6 +4,17 @@ tags: ["iOS"]
 notebook: iOS
 ---
 
+1. [Core ML与Vision：iOS11机器学习教程](http://www.jianshu.com/p/1df8ac6af865?utm_campaign=maleskine&utm_content=note&utm_medium=writer_share&utm_source=weibo)
+	1. NSLinguisticTagger：分析自然语言
+	2. Metal：对设备GPU底层访问
+	3. Accelerate-BNNS：构建用于推理的神经网络
+	4. Core ML：App 中使用训练过的模型
+	5. Vision：访问苹果的模型
+	
+2. [iOS 11 网络层新特性](https://zl-hj.com/w/a/5ab52lM?_=1496985003769)
+3. [iOS11原生机器学习视觉模型](https://mp.weixin.qq.com/s/lNnaMXQuF-OE__7ZuyY51Q)
+4. [CocoaTouch中的新特性](http://danny-lau.com/2017/06/12/wwdc2017-cocoa-touch-new/)
+5. [iOS11界面变化](https://medium.com/uxabc/ios11-design-diff-7cbf8f38369f)
 
 
 
