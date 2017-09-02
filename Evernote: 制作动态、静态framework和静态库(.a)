@@ -4,10 +4,38 @@ tags: ["iOS"]
 notebook: iOS
 ---
 
-###参考
+1. 静态库在静态链接时合并到目标文件中，启动或运行时候一起被夹在到app所在的内存上。
+2. 动态库启动或运行时候加载到独立于app的内存中。
+3. .a是纯二进制文件，要配合头文件和资源文件一起使用。
+4. 静态framework = .a + .h + bundle
+5. 动态framework = .dylib/.tbd + .h + bundle
+6. 动态库在减少包体积上有优势。
+7. 大量使用动态库会拖慢启动时间。
+	* 动态链接器需要在程序启动时候去执行链接过程，把所有未定义的符号找到，把空的地址全部确定。
+	* 也就是说把静态链接做的事情放到运行时去做，只会变慢。
+	* 系统的SDK可以用共享内存的方式减少向虚拟内存映射的时间，但是符号链接的过程必然不会少的。
+8. 动态库的处理方式
+	* 动态链接库：在没有被加载到内存的前提下，加载可执行文件时候动态库也被加载到内存中。如在Linked Framework and Libraries中设置的动态库
+	* 动态加载库：在需要的时候使用dlopen等通过代码和命令方式来加载。
+
+#### 参考
 
   1. [link1](http://years.im/Home/Article/detail/id/52.html)
   2. [link2](http://www.jianshu.com/p/ef3d5b7e7006)
   3. [link3](http://www.cnblogs.com/apem/p/4569502.html)
   4. [link4](https://www.gitbook.com/book/leon_lizi/-framework-/details)
   5. [link5](http://www.jianshu.com/p/48aff237e8ff?utm_campaign=maleskine&utm_content=note&utm_medium=writer_share&utm_source=weibo)
+  6. [link6](http://www.jianshu.com/p/48aff237e8ff)
+  7. [link7](https://github.com/Damonvvong/iOSDevNotes/blob/master/Notes/framework2.md)
+
+--
+
+### Embedded Binaries/Frameworks VS Linked Framework and Libraries
+
+1. Embedded frameworks are placed within an app’s sandbox and are only available to that app.
+2. System frameworks are stored at the system-level and are available to all apps.
+
+#### 参考
+1. [link1](https://googleapple.com/Embedded-Binaries-%E5%92%8C-Linked-Frameworks-and-Libraries%E7%9A%84%E5%8C%BA%E5%88%AB.html)
+2. [link2](https://stackoverflow.com/questions/32675272/when-should-we-use-embedded-binaries-rather-than-linked-frameworks-in-xcode)
+ 

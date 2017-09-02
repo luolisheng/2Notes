@@ -4,56 +4,81 @@ tags: ["blog"]
 notebook: luolisheng 的笔记本
 ---
 
-###使用hexo和Github Pages搭建博客
+<div markdown="1" style="-en-paragraph:true;margin-top:1em;margin-bottom:1em;">
 
-1. 根据官网教程安装hexo
- 	- [link](https://hexo.io/zh-cn/docs/index.html)
-2. 创建Github Pages
+###使用hexo和Github Pages搭建博客</div>
 
-3. 本地创建文件夹初始化hexo
-	- hexo init
-	- npm install
-	- 具体见官网
-	
-4. 修改_config.yml文件
-	- `
-	deploy:
-	type: git
-  	repo: git@github.com:{username}/{username}.github.io.git
-  branch: master
-  	`
-  	- 注意yml文件的格式
-  	
- 5. 绑定域名
- 6. 使用https
- 7. 主题
- 8. Google Analytics
- 
- ---
- 遇到的问题
+  1. 根据官网教程安装hexo
+    * [link](https://hexo.io/zh-cn/docs/index.html)
+  2. 创建Github Pages
+  3. 本地创建文件夹初始化hexo
+    * hexo init
+    * npm install
+    * 具体见官网
+  4. 修改_config.yml文件
+    1. 绑定域名
+    2. 使用https
+    3. 主题
+    4. Google Analytics
+    * deploy:type: gitrepo: git@github.com:{username}/{username}.github.io.gitbranch: master
+    * 注意yml文件的格式
 
- 1. 本地不需要clone{username}.github.io。否则再本地clone{username}.github.io中执行'hexo init'会出问题。单独创建代码仓库来管理博客。
- 
- 2. 之前安装过hexo但是运行时候出现hexo: command not found，没有指定nodejs所致。
- 	- nvm ls
- 	- nvm use v4.1.4
- 
- 3. hexo d发布时提示'ERROR Deployer not found: git'
- 	- npm install hexo-deployer-git --save
+* * *
+
+<div markdown="1" style="-en-paragraph:true;margin-top:1em;margin-bottom:1em;">
+
+遇到的问题</div>
+
+  1. 本地不需要clone{username}.github.io。否则再本地clone{username}.github.io中执行'hexo init'会出问题。单独创建代码仓库来管理博客。
+  2. 之前安装过hexo但是运行时候出现hexo: command not found，没有指定nodejs所致。
+    * nvm ls
+    * nvm use v4.1.4
+  3. hexo d发布时提示'ERROR Deployer not found: git'
+    * npm install hexo-deployer-git --save
 
 ### 相关账号
-1. 多说，微博账号登录
-2. 统计，ilisheng
- 	
- ---
- 参考
- 1. [link1](http://wingjay.com/2015/12/07/%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%80%E5%A4%A9%E4%B9%8B%E5%86%85%E6%90%AD%E5%BB%BA%E4%BB%A5%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%90%8D%E5%AD%97%E4%B8%BA%E5%9F%9F%E5%90%8D%E7%9A%84%E5%BE%88cool%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/)
- 2. [link2](http://wonder4.me)
- 3. [link3](http://androidren.com/index.php?qa=263&qa_1=bash-hexo-command-not-found)
- 4. [link4](http://my.oschina.net/wolflion/blog/521283#OSC_h3_2)
- 5. [link5](http://jingyan.baidu.com/article/d8072ac47aca0fec95cefd2d.html)
- 6. [link6(tangqiao)](http://blog.devtang.com/2016/02/16/from-octopress-to-hexo/)
- 7. [link7(模块)](http://jiji262.github.io/2016/04/15/2016-04-15-hexo-github-pages-blog/)
- 8. [link8(主题)](http://theme-next.iissnan.com/getting-started.html)
- 9. [link9(自动构建)](http://www.oneonecity.xyz/2016/12/16/Hexo%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA-%E5%9F%BA%E4%BA%8EFlow.ci%E5%92%8CCoding/)
- 10. [link10(自动构建)](http://www.floretten.com/2016/Flow_CI_Hexo.html)
+
+  1. 多说，微博账号登录
+  2. 统计，ilisheng
+
+* * *
+
+<div markdown="1" style="-en-paragraph:true;margin-top:1em;margin-bottom:1em;">
+
+参考</div>
+
+  1. [link1](http://wingjay.com/2015/12/07/%E5%A6%82%E4%BD%95%E5%9C%A8%E4%B8%80%E5%A4%A9%E4%B9%8B%E5%86%85%E6%90%AD%E5%BB%BA%E4%BB%A5%E4%BD%A0%E8%87%AA%E5%B7%B1%E5%90%8D%E5%AD%97%E4%B8%BA%E5%9F%9F%E5%90%8D%E7%9A%84%E5%BE%88cool%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/)
+  2. [link2](http://wonder4.me)
+  3. [link3](http://androidren.com/index.php?qa=263&qa_1=bash-hexo-command-not-found)
+  4. [link4](http://my.oschina.net/wolflion/blog/521283#OSC_h3_2)
+  5. [link5](http://jingyan.baidu.com/article/d8072ac47aca0fec95cefd2d.html)
+  6. [link6(tangqiao)](http://blog.devtang.com/2016/02/16/from-octopress-to-hexo/)
+  7. [link7(模块)](http://jiji262.github.io/2016/04/15/2016-04-15-hexo-github-pages-blog/)
+  8. [link8(主题)](http://theme-next.iissnan.com/getting-started.html)
+  9. [link9(自动构建)](http://www.oneonecity.xyz/2016/12/16/Hexo%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA-%E5%9F%BA%E4%BA%8EFlow.ci%E5%92%8CCoding/)
+  10. [link10(自动构建)](http://www.floretten.com/2016/Flow_CI_Hexo.html)
+
+* * *
+
+### 为Github Pages博客配置https
+Github Pages仅支持github.io域名的证书，且不支持上传证书。所以如果想要给你的网站配置https ，就不能使用一般的静态证书，
+只能在 DNS 域名解析的时候给你提供一个动态的 HTTPS 证书。
+要使用一般静态证书，要把博客迁移到其他平台参见[自定义域名](https://sikaixing.com/2017/04/23/gitlab_with_https/)
+
+#### 使用[Cloudflare](https://www.cloudflare.com/)
+1. 搭建好Github Pages博客并绑定自己的域名
+2. Cloudflare里添加站点，设置2个A记录和1个CNAME记录（是否有必要自己手动设置还要验证）
+3. 去你的域名注册商更改 DNS Server 成 Cloudflare 所提供的
+4. 在 Cloudflare 中配置 Crypto ，选择Flexible
+5. 在 Cloudflare 配置 Page Rules ，访问自己域名的地址都 always use https
+
+### 参考
+1. [link1](https://www.thinktxt.com/jekyll/2017/02/06/jekyll-series-github-pages-custom-domain-https.html)
+2. [link2](https://reishin.me/2016/08/25/Hexo-with-SSL-hosted-on-GitHub-Pages/)
+3. [link3](https://cn2.chionlab.moe/2016/01/28/github-pages-with-https/)
+4. [link4](https://g2ex.github.io/2015/10/14/Hexo-with-SSL-Hosted-on-Github-Page/)
+
+
+
+  
+
