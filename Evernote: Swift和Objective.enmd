@@ -1,3 +1,9 @@
+---
+title: Swift和Objective混编
+tags: ["iOS"]
+notebook: iOS
+---
+
 ### 混编方式
 
 1. OC项目中引入Swift源码
@@ -16,3 +22,4 @@
 4. [引入动态库2](http://davidleee.com/2016/05/12/Use-Swift-framework-in-OC-project/)
 5. [引入动态库3](http://www.jianshu.com/p/13ee670f21ac)
 6. [引入动态库4](http://www.hangge.com/blog/cache/detail_1425.html)
+7. [link](http://www.jianshu.com/p/42891fb90304)
