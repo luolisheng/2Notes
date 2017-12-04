@@ -1,0 +1,37 @@
+### 文件
+
+1. cmd + shift + o (查找并打开文件)
+2. cmd + shift + j (显示文件在项目中位置)
+3. ctrl+ 6			(显示文件所有函数)
+4. cmd + ctrl + space (显示emoji表情)
+
+### 编辑
+1. cmd + [ + : (左缩进)
+2. cmd + ] + : (右缩进)
+3. cmd + ctrl + <- (折叠)
+4. cmd + ctrl + -> (取消折叠)
+5. cmd + ctrl + top (折叠全部函数)
+6. cmd + ctrl + bottom (取消全部函数折叠)
+7. ctrl + u (取消全部折叠)
+8. cmd + d (添加书签)
+9. cmd + option + / ()
+10. cmd + [ (左移代码块)
+11. cmd + ] (右移代码块)
+12. ctrl + . (参数提示)
+13. ctrl + f (前移光标)
+14. ctrl + b (后移光标)
+15. ctrl + a (光标移到行首)
+16. ctrl + e (光标移到行尾)
+17. ctrl + p (光标移到上一行)
+18. ctrl + n (光标移到下一行)
+19. ctrl + t (交换光标两边字符)
+20. ctrl + d (删除光标后边的字符)
+21. ctrl + k (删除本行)
+22. ctrl + l (将光标位置居中)
+23. cmd + ← (移动到行首)
+24. cmd + → (移动到行尾)
+25. option + ← (左移一个单词)
+26. option + → （右移一个单词)
+
+### 参考
+1. [link1](http://www.cnblogs.com/yjmyzz/archive/2011/01/25/1944325.html)
