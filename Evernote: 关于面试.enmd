@@ -1,18 +1,36 @@
+---
+title: 关于面试
+tags: []
+notebook: luolisheng 的笔记本
+---
+
 ### 2017-04-14
 1. 自我介绍
 2. runtime的运用
-	1. [link1](http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/)
+	1. Objc动态语言总是把决定工作从编译阶段推迟到运行时。
+	2. 只有编译器是不够的，还需要运行时系统执行编译后的代码。
+	3. Runtime基本是C和汇编写的。
+	4. Objc从三种不同层级上和Runtime系统交互
+		* 通过Objective-C源代码
+		* 通过NSObject类定义的方法
+		* 通过对runtime函数直接调用
+	4. [link1](http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/)
 3. runloop
 	1. 自动释放池、延迟回调、触摸事件、屏幕刷新等基于runloop实现。
 	2. 线程和runloop是一一对应的，其关系是保存在一个全局的字典里，一个线程不一定只有一个runloop，runloop可以嵌套。
 	3. 线程刚创建时没有runloop，如果不主动创建一直就不会有。
 	4. runloop的创建发生在第一次获取时，销毁发生在线程结束时。
+	5. 主要作用保持程序的持续运行。主线程runloop从程序打开就一直运行。
+	6. 如果一个runloop的mode中一个item都没有，runloop直接退出不进入循环。
+	7. 如果要切换mode只能退出loop(并非销毁)，再重新指定一个mode进入。这样保证不同mode的Source/Timer/Observer互不影响。
+	8. 只能在线程内部获取runloop，主线程例外。
 	5. [link1](https://www.zybuluo.com/qidiandasheng/note/346387)
 	6. [link2](http://blog.ibireme.com/2015/05/18/runloop/)
 	7. [link3](http://www.jianshu.com/p/4d5b6fc33519)
 4. 事件传递及响应
 	1. 事件分三类：触摸事件、加速计事件、远程控制事件。
 	2. 只有继承自UIResponder的对象才能接收并响应事件。
+	3. 触摸事件会把事件传递给事件发生的view，Motion和Remote事件会传递给当前的firstResponder。
 	3. 触摸事件产生和传递。
 		1. 一个硬件事件发生之后，系统将该事件加入到UIApplication管理的事件队列。
 			1. IOKit.framework生成一个IOHIDEvent事件并由SpringBoard接收。
@@ -25,9 +43,11 @@
 			2. 再检查触摸点是否在自己身上，不在自己身上则返回nil。
 			3. 然后遍历子控件，重复1、2步骤。
 			4. 最后没有合适的子控件就是自己最合适处理。
+			5. 找到响应者之后，通过sendEvent:函数把事件发送给响应者。
 		4. 找到合适的视图之后就会调用视图控件的touches方法来做事件处理。
-		5. touches方法的默认做法是将事件顺着响应者链向上传递。
-			1. 默认调用[super touch...]，调用上一个响应者的touch方法。
+		5. touches方法的默认做法是将事件顺着响应者链向上传递。如果第一响应者没有实现touches方法，那么就会根据响应链，把事件冒泡传递给nextResponder来响应。
+			1. touchesBegan里面设置按钮高亮。
+			2. touchEnded里面响应绑定的Action。sendAction:to:from:forEvent:
 	4. 不接受触摸事件的几种情况。
 		1. 不接收交互userInteractionEnabled = NO。
 		2. 隐藏 hidden=YES。
@@ -37,25 +57,77 @@
 		2. 最顶层视图也不能处理接收到的事件则传递给window对象处理。
 		3. window对象也不处理则传递给UIApplication对象。
 		4. UIApplication也不能处理消息则将其丢弃。
-	6. [link1](http://www.jianshu.com/p/82024d85c529)
+	6. 总结：触摸或者点击一个控件，然后这个事件会从上向下（从父->子）找最合适的view处理，找到这个view之后看他能不能处理。
+		能就处理，不能就按照事件响应链向上（从子->父）传递给父控件。
+	7. [link1](http://www.jianshu.com/p/82024d85c529)
+	8. [link2](http://zhoon.github.io/ios/2015/04/12/ios-event.html)
+	9. [link3](http://blog.flight.dev.qunar.com/2016/10/28/ios-event-mechanism-summary/)
 5. 浅拷贝和深拷贝
+	1. 非集合类对象的copy和mutableCopy
+		1. 非可变对象copy为浅复制
+		2. 非可变对象mutableCopy为深复制
+		3. 可变对象copy为深复制
+		4. 可变对象mutableCopy为深复制
+	2. 集合类对象的copy和mutableCopy
+		1. 非可变对象copy为浅复制
+		2. 非可变对象mutableCopy为单层深复制
+		3. 可变对象copy为单层深复制
+		4. 可变对象mutableCopy为单层深复制
+	3. 适用于衍生方法
+		1. copyWithZone
+		2. mutableCopyWithZone
+	4. 集合类对象真正深复制
+		1. initWithXX:copyItems:YES
+		2. 归档之后再解档
 	1. [link1](https://www.zybuluo.com/MicroCai/note/50592)
 	2. [link2](http://blog.csdn.net/qq_18425655/article/details/51325921)
 6. 多线程运用／GCD队列／实现线程依赖
 7. 数组和链表
+	1. 数组特点
+		* 数组在内存中是连续的区域。
+		* 数组需要预留空间，提前申请好内存。
+		* 插入和删除数据效率低。
+		* 随机读取效率高，数组是连续的。
+		* 扩展性不好，空间不够要重新定义新数组。
+	2. 链表特点
+		* 在内存中不是连续的。
+		* 每个数据都保存了下一个数据的内存地址。
+		* 插入和删除数据效率高。
+		* 读取数据效率低，访问某个位置的数据都要从第一个数据开始。
+		* 扩展性好。
+	3. [link1](http://blog.devtang.com/2015/06/16/talk-about-tech-interview/)
+	4. [link2](http://www.cnblogs.com/manji/p/4903990.html)
+	5. [link3](http://www.jianshu.com/p/12fe060811f2)
 8. 对象在内存中的位置
+	1. 编译时候，每个类都会生成一个描述其定义的对象，即类对象。
+	2. 类对象是单例，是运行时库来创建实例对象的依据。
+	3. 类对象的isa指向其元类对象。
+	4. 类对象包含类的实例变量、实例方法的定义，元类对象包含类的类方法定义。
+	5. 类对象存储实例对象的信息（变量、实例方法），元类对象存储类的信息（类版本、名字、类方法）。
+	6. [link1](http://www.cnblogs.com/csutanyu/archive/2011/12/12/Objective-C_memory_layout.html)
+9. 进程的内存分配
+	1. RAM：运行内存，不能掉电存储。
+	2. ROM：存储内存，可以掉电存储。
+	3. app程序存放在ROM中，启动时系统把app从ROM转移到RAM中。
+	1. [link1](http://www.jianshu.com/p/746c747e7e00)
 9. 消息转发机制
+	1. 动态方法解析会在消息转发机制侵入前执行，若想要消息转发机制被触发让resolveInstanceMethod:resolveClassMethod:返回NO。 
+	2. 重定向，在消息转发之前，Runtime会给一次替换消息接收者为其他对象。
 	1. [link1](http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/)
 10. Autorelease Pool工作原理和使用场景、引用计数为0时什么时候释放对象
+	4. 手动加的Autorelease Pool，在使用结束时会清空一次。
+	5. 每次runloop迭代开始前系统自动创建Autorelease Pool，迭代结束时清空Autorelease Pool。
+	6. runloop即将进入休眠会释放Autorelease Pool，并创建新的。
+	7. 一个线程的Autorelease Pool就是一个指针线程堆栈。
+	8. 这个堆栈就是以AutoreleasePoolPage为节点的双向链表。
+	8. 每一个指针都代表一个要release的对象或哨兵对象，哨兵对象代表一个Autorelease Pool的边界。
+	9. 每次push操作就会创建一个新的Autorelease Pool，即往AutoreleasePoolPage中插入一个哨兵对象。
+	10. 两个哨兵对象之间就是一个Autorelease Pool。
+	11. Autorelease Pool可以跨越AutoreleasePoolPage。
 	1. [link1](http://blog.leichunfeng.com/blog/2015/05/31/objective-c-autorelease-pool-implementation-principle/)
 	2. [link2](http://blog.sunnyxx.com/2014/10/15/behind-autorelease/#jtss-tsina)
 	3. [link3](http://yangchao0033.github.io/blog/2015/12/31/guan-yu-at-autoreleasepoolde-ce-shi-ji-shi-yong/)
-	4. 手动加的Autorelease Pool，在使用结束时清空一次。
-	5. 每次runloop迭代开始前系统自动创建Autorelease Pool，迭代结束时清空Autorelease Pool。
 11. 类别覆盖类方法、类别方法重复定义
-	1. [link1](http://tech.meituan.com/DiveIntoCategory.html)
-	2. [link2](http://blog.leichunfeng.com/blog/2015/05/18/objective-c-category-implementation-principle/)
-	3. [link3](http://tech.meituan.com/DiveIntoCategory.html)
 	4. 类别覆盖了原始类中已经实现的方法则没有任何办法再调用原始方法了。
 		1. category的方法没有“完全替换掉”原来类已经有的方法，类的方法列表里会有两个method。
 		2. category的方法被放到了新方法列表的前面，而原来类的方法被放到了新方法列表的后面，方法查找的时候是按方法列表顺序查找，找到之后就返回。
@@ -64,11 +136,18 @@
 		1. load的方法跟普通方法一样会对主类覆盖。
 		2. runtime调用load方法时是直接使用指针进行调用的。
 		3. 手动给主类发送load消息实际上调用的是category中的load。
-	7. category和extension的区别
+	7. Category 中的实例方法和属性被整合到主类中，而类方法则被整合到元类中。
+		1. Category 中的协议被同时整合到了主类和元类中。
+	8. category和extension的区别
 		1. extension在编译期就确定，它是类的一部分，跟随类产生和消亡。
 		2. extension用于隐藏类的私有消息，只有类的源码才能为类添加extension。
 		3. category在运行时确定，所以category不能添加实例变量，因为在运行时对象的内存布局已经确定，添加实例变量会破坏类的内存布局。
+		4. category可为类添加实例方法、类方法、协议、属性，不可添加实例变量。
+	1. [link1](http://tech.meituan.com/DiveIntoCategory.html)
+	2. [link2](http://blog.leichunfeng.com/blog/2015/05/18/objective-c-category-implementation-principle/)
 12. 蓝牙
+	1. 蓝牙传输数据只支持16进制，每次传输20个字节。
+	* [link1](http://mrpeak.cn/blog/ios-bluetooth/)
 13. 堆和栈的区别
 	1. 栈是一个用来存储局部和临时变量的存储空间。
 		1. 一个线程会分配一个栈。
@@ -89,15 +168,13 @@
 	6. [link1](http://kali.leanote.com/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8Objective-C%E4%B8%AD%E5%8F%AA%E4%BC%9A%E4%BD%BF%E7%94%A8%E5%A0%86%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1%E8%80%8C%E4%B8%8D%E4%BD%BF%E7%94%A8%E6%A0%88%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1)
 	7. [link2](http://foggry.com/blog/2017/02/06/wei-shi-yao-objective-c-dui-xiang-cun-chu-zai-dui-shang-er-bu-shi-zhan-shang/)
 	8. [link8](https://hit-alibaba.github.io/interview/basic/arch/Memory-Management.html#程序可执行文件的结构)
-
 14. 应用安全
-	1. 安全方案
-	2. 安全评测
-15. get/post区别
 
 ### 通用算法
 1. [link1(查找)](http://www.cnblogs.com/Kobe10/p/6053131.html)
 2. [link2(排序)](http://www.jcodecraeer.com/a/chengxusheji/shejimoshi/2015/0527/2941.html)
 
-### 参考
+### 面试相关参考
 1. [link1](https://mp.weixin.qq.com/s/lSg6EFcaSoVtlLcpfTBedA)
+2. [link2](https://hit-alibaba.github.io/interview/)
+3. [link3](https://bestswifter.com/bat-interview/)

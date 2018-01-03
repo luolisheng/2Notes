@@ -59,7 +59,8 @@ A4：简单来说，block 还会继续执行，但是它捕获的指针会具有
 
 参考
 
-<http://www.jianshu.com/p/4ec18161d790>  
+<https://bestswifter.com/strong-weak-dance>
+<http://www.jianshu.com/p/c9967eec0ba9>  
 <https://github.com/ChenYilong/iOSBlog/blob/master/Tips/Heap-Stack%20Dance/Heap-Stack%20Dance.md>
 
   
