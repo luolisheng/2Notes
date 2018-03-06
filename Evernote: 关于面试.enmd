@@ -115,6 +115,9 @@ notebook: luolisheng 的笔记本
 	2. 重定向，在消息转发之前，Runtime会给一次替换消息接收者为其他对象。
 	1. [link1](http://yulingtianxia.com/blog/2014/11/05/objective-c-runtime/)
 10. Autorelease Pool工作原理和使用场景、引用计数为0时什么时候释放对象
+	1. [link1](http://blog.leichunfeng.com/blog/2015/05/31/objective-c-autorelease-pool-implementation-principle/)
+	2. [link2](http://blog.sunnyxx.com/2014/10/15/behind-autorelease/#jtss-tsina)
+	3. [link3](http://yangchao0033.github.io/blog/2015/12/31/guan-yu-at-autoreleasepoolde-ce-shi-ji-shi-yong/)
 	4. 手动加的Autorelease Pool，在使用结束时会清空一次。
 	5. 每次runloop迭代开始前系统自动创建Autorelease Pool，迭代结束时清空Autorelease Pool。
 	6. runloop即将进入休眠会释放Autorelease Pool，并创建新的。
@@ -124,10 +127,9 @@ notebook: luolisheng 的笔记本
 	9. 每次push操作就会创建一个新的Autorelease Pool，即往AutoreleasePoolPage中插入一个哨兵对象。
 	10. 两个哨兵对象之间就是一个Autorelease Pool。
 	11. Autorelease Pool可以跨越AutoreleasePoolPage。
-	1. [link1](http://blog.leichunfeng.com/blog/2015/05/31/objective-c-autorelease-pool-implementation-principle/)
-	2. [link2](http://blog.sunnyxx.com/2014/10/15/behind-autorelease/#jtss-tsina)
-	3. [link3](http://yangchao0033.github.io/blog/2015/12/31/guan-yu-at-autoreleasepoolde-ce-shi-ji-shi-yong/)
 11. 类别覆盖类方法、类别方法重复定义
+	1. [link1](http://tech.meituan.com/DiveIntoCategory.html)
+	2. [link2](http://blog.leichunfeng.com/blog/2015/05/18/objective-c-category-implementation-principle/)
 	4. 类别覆盖了原始类中已经实现的方法则没有任何办法再调用原始方法了。
 		1. category的方法没有“完全替换掉”原来类已经有的方法，类的方法列表里会有两个method。
 		2. category的方法被放到了新方法列表的前面，而原来类的方法被放到了新方法列表的后面，方法查找的时候是按方法列表顺序查找，找到之后就返回。
@@ -143,11 +145,9 @@ notebook: luolisheng 的笔记本
 		2. extension用于隐藏类的私有消息，只有类的源码才能为类添加extension。
 		3. category在运行时确定，所以category不能添加实例变量，因为在运行时对象的内存布局已经确定，添加实例变量会破坏类的内存布局。
 		4. category可为类添加实例方法、类方法、协议、属性，不可添加实例变量。
-	1. [link1](http://tech.meituan.com/DiveIntoCategory.html)
-	2. [link2](http://blog.leichunfeng.com/blog/2015/05/18/objective-c-category-implementation-principle/)
 12. 蓝牙
-	1. 蓝牙传输数据只支持16进制，每次传输20个字节。
-	* [link1](http://mrpeak.cn/blog/ios-bluetooth/)
+	* [link1](https://www.jianshu.com/p/ee4fef3762ef)
+	* [link2](http://mrpeak.cn/blog/ios-bluetooth/)
 13. 堆和栈的区别
 	1. 栈是一个用来存储局部和临时变量的存储空间。
 		1. 一个线程会分配一个栈。
@@ -158,7 +158,10 @@ notebook: luolisheng 的笔记本
 	2. 在堆上我们可以任何时候分配内存空间以及释放销毁它。
 		1. 堆上必须显示的请求分配内存空间 malloc。
 		2. 不用垃圾回收机制必须显示的释放它 free。
-	3. Objective-C不支持创建栈对象。
+		3. 堆在所有线程、共享库、动态加载库中共享使用。
+	3. Objective-C栈对象只支持blocks。使用block语法实际上是使用了栈对象。
+		1. 若想保持对block的引用，需要对其进行copy操作。
+		2. 从栈上copy到堆中并返回一个指向它的指针。
 	4. 对象是结构体，占一段连续的内存区域。
 		1. 指向对象的指针存储在栈上。
 		2. 对象存储在堆上。
@@ -167,8 +170,11 @@ notebook: luolisheng 的笔记本
 		2. 栈是机器系统提供的数据结构，计算机会在底层对栈提供支持：分配专门的寄存器存放栈的地址，压栈出栈都有专门的指令执行，这就决定了栈的效率比较高。
 	6. [link1](http://kali.leanote.com/post/%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8Objective-C%E4%B8%AD%E5%8F%AA%E4%BC%9A%E4%BD%BF%E7%94%A8%E5%A0%86%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1%E8%80%8C%E4%B8%8D%E4%BD%BF%E7%94%A8%E6%A0%88%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1)
 	7. [link2](http://foggry.com/blog/2017/02/06/wei-shi-yao-objective-c-dui-xiang-cun-chu-zai-dui-shang-er-bu-shi-zhan-shang/)
-	8. [link8](https://hit-alibaba.github.io/interview/basic/arch/Memory-Management.html#程序可执行文件的结构)
+	8. [link3](https://hit-alibaba.github.io/interview/basic/arch/Memory-Management.html#程序可执行文件的结构)
+	9. [link4](https://www.jianshu.com/p/746c747e7e00)
 14. 应用安全
+	* [link1](http://blog.devtang.com/2014/05/08/ios-security-dev-overview/)
+	* [link2](http://blog.devtang.com/2015/10/22/talk-with-zm-about-ios-security/)
 
 ### 通用算法
 1. [link1(查找)](http://www.cnblogs.com/Kobe10/p/6053131.html)
