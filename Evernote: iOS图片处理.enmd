@@ -12,9 +12,22 @@ notebook: iOS
 	1. 如果数据没有字节对齐，Core Animation会再拷贝一份数据，进行字节对齐
 	2. GPU处理位图数据，进行渲染 
 
+### 有损压缩和无损压缩
+不管图片格式如何，都可以分为两大类：有损压缩和无损压缩
+1. 有损压缩
+	* 人眼对光线亮度信息更为敏感
+	* 因此可以通过合并图片中的颜色信息，保留亮度信息，可以在尽量不影响图片感官的前提下减少存储体积。
+	* 压缩后图片永久损失一些细节。
+	* 典型格式如jpg。
+2. 无损压缩：
+	* 通过对图片中不同的颜色特征建立索引表，减少了重复的颜色数据，达到压缩效果。
+	* 常见如png，gif
+3. 
+
 ### 参考
 
 1. [link1](http://blog.ibireme.com/2015/11/02/ios_image_tips/)
 2. [link2](http://blog.mrriddler.com/2016/07/20/iOS%E4%B8%AD%E7%9A%84imageIO%E4%B8%8Eimage%E8%A7%A3%E7%A0%81/)
 3. [link3](http://blog.mrriddler.com/2016/07/20/%E5%9B%BE%E7%89%87%E4%B9%8B%E6%97%85/)
 4. [link4](http://blog.cnbang.net/tech/2578/)
+5. [link5](https://mp.weixin.qq.com/s/Z8p5jaf2jjSzNBJRwh-Z-Q)
