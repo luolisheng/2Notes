@@ -12,6 +12,11 @@ notebook: iOS
 	1. 如果数据没有字节对齐，Core Animation会再拷贝一份数据，进行字节对齐
 	2. GPU处理位图数据，进行渲染 
 
+### 图片的编码格式
+1. baseline，逐行扫描。默认情况下JPG/PNG/GIF都是这种格式。
+2. interlaced，隔行扫描。PNG/GIF在保存时可以选择这种格式。
+3. progressive，渐进式。JPEG在保存时可以选择这种格式。
+
 ### 有损压缩和无损压缩
 不管图片格式如何，都可以分为两大类：有损压缩和无损压缩
 1. 有损压缩
@@ -31,3 +36,4 @@ notebook: iOS
 3. [link3](http://blog.mrriddler.com/2016/07/20/%E5%9B%BE%E7%89%87%E4%B9%8B%E6%97%85/)
 4. [link4](http://blog.cnbang.net/tech/2578/)
 5. [link5](https://mp.weixin.qq.com/s/Z8p5jaf2jjSzNBJRwh-Z-Q)
+6. [加载超清大图内存暴涨](https://www.jianshu.com/p/eb859cb99974)
