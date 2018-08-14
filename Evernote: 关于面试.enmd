@@ -110,7 +110,10 @@ notebook: luolisheng 的笔记本
 	1. RAM：运行内存，不能掉电存储。
 	2. ROM：存储内存，可以掉电存储。
 	3. app程序存放在ROM中，启动时系统把app从ROM转移到RAM中。
-	1. [link1](http://www.jianshu.com/p/746c747e7e00)
+	4. [link1](http://www.jianshu.com/p/746c747e7e00)
+	5. [虚拟内存](http://www.molotang.com/articles/2001.html)
+	6. [虚拟内存](http://www.gltech.win/ios%E5%BC%80%E5%8F%91/2018/01/16/%E6%8E%A2%E7%B4%A2iOS%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D.html)
+	7. [虚拟内存](https://yq.aliyun.com/articles/3065)
 9. 消息转发机制
 	1. 动态方法解析会在消息转发机制侵入前执行，若想要消息转发机制被触发让resolveInstanceMethod:resolveClassMethod:返回NO。 
 	2. 重定向，在消息转发之前，Runtime会给一次替换消息接收者为其他对象。
@@ -176,9 +179,12 @@ notebook: luolisheng 的笔记本
 14. 应用安全
 	* [link1](http://blog.devtang.com/2014/05/08/ios-security-dev-overview/)
 	* [link2](http://blog.devtang.com/2015/10/22/talk-with-zm-about-ios-security/)
+	* [link3](https://danleechina.github.io/ios-app-security-reinforce/)
 15. iOS系统组成架构，IOKit在系统架构中的位置，设备驱动位置
 	1. [link1](https://blog.ibireme.com/2015/05/18/runloop/)
 16. App启动流程
+	1. [link1](https://mp.weixin.qq.com/s/Kf3EbDIUuf0aWVT-UCEmbA)
+	2. [link2](https://blog.csdn.net/hello_hwc/article/details/78317863)
 17. App安装路径和沙河路经的关系
 18. App签名验证（服务器验证/本地验证）
 19. KVC/KVO实现原理
