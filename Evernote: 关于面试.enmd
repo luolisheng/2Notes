@@ -63,6 +63,7 @@ notebook: luolisheng 的笔记本
 	8. [link2](http://zhoon.github.io/ios/2015/04/12/ios-event.html)
 	9. [link3](http://blog.flight.dev.qunar.com/2016/10/28/ios-event-mechanism-summary/)
 	10. [link4](http://www.cnblogs.com/klaus/archive/2013/04/22/3036692.html)
+	11. [link5](https://xiaozhuanlan.com/topic/1598036724)
 5. 对象的浅拷贝和深拷贝
 	1. 非集合类对象的copy和mutableCopy
 		1. 非可变对象copy为浅复制
@@ -190,6 +191,7 @@ notebook: luolisheng 的笔记本
 19. KVC/KVO实现原理
 20. 界面卡顿查找和出路方式
 21. 渲染CPU计算/GPU计算，渲染纹理/栅格化，drawrect减少内存占用
+	1. [link1](http://bihongbo.com/2016/01/03/memoryGhostdrawRect/)
 22. 系统动态库/内嵌动态库/main函数加载时机
 23. socket与服务器长连的心跳处理，http缓存
 24. 几大开源库的源码分析
@@ -202,6 +204,7 @@ notebook: luolisheng 的笔记本
 27. 保持界面流畅
 	1. [link1](https://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/)
 	2. [link2](http://sonnewilling.com/blog/2016/10/19/iostu-xing-yuan-li-yu-chi-ping-xuan-ran/)
+	3. [link3](https://juejin.im/post/5b72aaf46fb9a009764bbb6a)
 
 ### 通用算法
 1. [查找1](http://www.cnblogs.com/Kobe10/p/6053131.html)
