@@ -36,7 +36,7 @@ A1：引用计数描述的是对象而不是指针，sself 强引用 wself 指�
 
 Q2：block 内部定义了sself，会不会因此强引用了 sself？
 
-A2：block 只有截获外部变量时，才会引用它。如果是内部新建一个，则没有任何问题。
+A2：block 只有截获外部强引用变量时，才会引用它。如果是内部新建一个，则没有任何问题。
 
   
 
@@ -55,13 +55,21 @@ A4：简单来说，block 还会继续执行，但是它捕获的指针会具有
 <http://stackoverflow.com/questions/12272783/what-happens-when-a-block-is-set-to-nil-during-its-execution>
 
   
-
+### 新的思考
+1. block会捕获外部变量，并拷贝到block中。变量如果是强引用指针，会将指针指向的对象引用计数加一。
+2. blcok将weakself捕获到其variables中，因为是__weak类型因此block不会对self进行强引用；block的invoke指针指向block的实现代码。
+3. 执行block时才会创建strongself，如果此时self还未释放，会将self对象的引用计数加一，防止执行期间self对象被释放；block执行完之后ARC将引用计数自动减一。
+4. 如果在执行block前self对象被释放，block引用计数变为0，block被释放就不会执行。
+5. 如果在执行block过程中self对象被释放(还没有创建strongself)，weakself变为nil，创建strongself也为nil，会有crash风险。
+6. 如果在执行block过程中block被释放，block还会继续执行，但是它捕获的指针会具有不确定的值，详细内容请参考Q4
 
 参考
 
 <https://bestswifter.com/strong-weak-dance>
 <http://www.jianshu.com/p/c9967eec0ba9>  
 <https://github.com/ChenYilong/iOSBlog/blob/master/Tips/Heap-Stack%20Dance/Heap-Stack%20Dance.md>
+<https://www.tuicool.com/articles/nYZV32n>
+<http://liyaogang.com/%E5%AF%B9weakify%E5%92%8Cstrongify%E7%9A%84%E5%87%A0%E7%82%B9%E7%90%86%E8%A7%A3/>
 
   
 
