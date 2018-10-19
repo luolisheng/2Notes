@@ -90,7 +90,7 @@ notebook: luolisheng 的笔记本
 	3. RunLoopMode结构
 	4. AutoreleasePool
 		* App启动后系统在主线程runloop里注册了两个Observer，回调都是_wrapRunLoopWithAutoreleasePoolHandler()。
-		* 第一个Observer监视即将进入循环，回调内调用_objc_autoreleasePoolPush()创建自动释放池；优先级最高，保证发生在其他回调之前。
+		* 第一个Observer监视事件即将进入循环，回调内调用_objc_autoreleasePoolPush()创建自动释放池；优先级最高，保证发生在其他回调之前。
 		* 第二个Observer监视两个事件
 			1. BeforeWaiting：调用_objc_autoreleasePoolPop()和_objc_autoreleasePoolPush()。释放自动释放池并创建新池。
 			2. Exit：调用_objc_autoreleasePoolPop()释放自动释放池；优先级最低，保证发生在其他回调之后。
@@ -99,11 +99,11 @@ notebook: luolisheng 的笔记本
 		* 一个硬件事件发生后，先由IOKit.framework生成IOHIDEvent 事件并由 SpringBoard 接收。(通过IPC通信)
 		* SpringBoard通过mach port转发给App进程，触发Source1回调。
 		* Source1内部触发Source0调用_UIApplicationHandleEventQueue()进行应用内部分发。
-		* _UIApplicationHandleEventQueue()把IOHIDEventUIEvent进行处理。
+		* _UIApplicationHandleEventQueue()把IOHIDEvent包装成UIEvent进行处理。
 	6. 手势识别
 		* 手势识别器识别到手势后，先调用Cancel将当前的touch回调打断。
 		* 随后系统把UIGestureRecognizer标记为待处理。(source0事件手动标记)
-		* 系统注册一个Observer坚实BeforeWaiting，回调为_UIGestureRecognizerUpdateObserver()。
+		* 系统注册一个Observer监视BeforeWaiting，回调为_UIGestureRecognizerUpdateObserver()。
 		* 回调内部会获取被标记的待处理的GestureRecognizer，并执行GestureRecognizer回调。
 	7. 界面更新
 		* 当操作UI时，如改变frame、更新UIView/CALayer层次、手动调用UIView/CALayer 的 setNeedsLayout/setNeedsDisplay，这个UIView/CALayer被标记为待处理，提交到一个全局容器里。
