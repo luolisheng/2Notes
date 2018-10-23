@@ -184,25 +184,33 @@ notebook: luolisheng 的笔记本
 	13. [link4](http://www.cnblogs.com/klaus/archive/2013/04/22/3036692.html)
 	14. [link5](https://xiaozhuanlan.com/topic/1598036724)
 5. 对象的浅拷贝和深拷贝
-	1. 非集合类对象的copy和mutableCopy
+	1. 浅拷贝拷贝指针，深拷贝拷贝内容。
+	2. copy、mutableCopy和浅拷贝、深拷贝没有关系。
+	3. 非集合类对象的copy和mutableCopy
 		1. 非可变对象copy为浅复制
 		2. 非可变对象mutableCopy为深复制
 		3. 可变对象copy为深复制
 		4. 可变对象mutableCopy为深复制
-	2. 集合类对象的copy和mutableCopy
+	4. 集合类对象的copy和mutableCopy
 		1. 非可变对象copy为浅复制
 		2. 非可变对象mutableCopy为单层深复制
 		3. 可变对象copy为单层深复制
 		4. 可变对象mutableCopy为单层深复制
-	3. 适用于衍生方法
+	5. 适用于衍生方法
 		1. copyWithZone
 		2. mutableCopyWithZone
-	4. 集合类对象真正深复制
+	6. 集合类对象真正深复制
 		1. initWithXX:copyItems:YES
 		2. 归档之后再解档
-	1. [link1](https://www.zybuluo.com/MicroCai/note/50592)
-	2. [link2](http://blog.csdn.net/qq_18425655/article/details/51325921)
+	7. [link1](https://www.zybuluo.com/MicroCai/note/50592)
+	8. [link2](http://blog.csdn.net/qq_18425655/article/details/51325921)
 6. 多线程运用／GCD队列／实现线程依赖
+	* 概念
+		1. 线程用于指代一个独立执行的代码路径。
+		2. 进程用于指代一个可执行的程序，可以包含多个线程。
+		3. 当一个可执行程序有多个独立执行的代码路径是，就叫做多线程。
+
+	1. [link1](https://www.jianshu.com/p/8ed06312d8bd)
 7. 数组和链表
 	1. 数组特点
 		* 数组在内存中是连续的区域。
