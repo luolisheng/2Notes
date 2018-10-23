@@ -122,8 +122,35 @@ notebook: luolisheng 的笔记本
 4. 事件传递及响应
 	1. 事件分四类：触摸事件、运动事件、远程控制事件、按压事件。
 	2. 只有继承自UIResponder的对象才能接收并响应事件。
-	3. 触摸事件会把事件传递给事件发生的view，Motion和Remote事件会传递给当前的firstResponder。
-	3. 触摸事件产生和传递。
+	3. 事件响应（触摸、摇晃、线控）
+		* 事件会通过使用 IOKit.framework 来封装成 IOHIDEvent 对象。
+		* 系统通过 mach port(IPC 进程间通信) 将 IOHIDEvent 对象转发给 SpringBoard.app。
+		* SpringBoard.app 会找到可以响应这个事件的 App，并通过 mach port(IPC 进程间通信) 将 IOHIDEvent 对象转发给这个 App。
+		* 前台 App 主线程 Runloop 接收到 SpringBoard.app 转发过来的消息之后，触发对应的 mach port 的 Source1 回调 __IOHIDEventSystemClientQueueCallback()。
+		* Source1 回调内部触发了 Source0 回调 __UIApplicationHandleEventQueue()。
+		* Source0 回掉内部，将 IOHIDEvent 对象转化为 UIEvent。
+		* Soucre0 回调内部调用 UIApplication 的 +[sendEvent:] 方法，将 UIEvent 传给UIWindow。
+		* UIWindow 接收到这个事件后，开始传递事件。
+	4. UIWindow接收到事件之后，触摸事件会把事件传递给事件发生的view，Motion和Remote事件会传递给当前的firstResponder。
+	5. 触摸事件/按压事件传递三个阶段
+		* 寻找合适的View（Hit-Testing方法的实现）
+			1. 遍历视图，UIWindow先将事件传递给子视图，再调用子视图hitTest:withEvent:方法。
+			2. 如果点不在此视图上，就return nil，去遍历其他子视图。
+			3. 如果点在此视图上，视图上有子视图；按步骤1类似的方式处理。
+			4. 如果点在此视图上，视图上没有子视图；就return self，自己就是最合适的视图。
+			5. 如果点在此视图上，视图上没有子视图；但是不想来处理事件，就return nil，交给父视图处理。
+		* 手势识别（Recognize Gesture）
+			1. 找到合适的View之后，UIWindow先将touches事件传递给Gesture Recognizer，再传递给视图。
+			2. 手势识别成功后，会取消视图的touch系列方法的调用。
+			3. 在runloop的Observer里处理手势事件。
+		* 事件传递（Response Chain）
+			1. 事件的响应是有touch系列方法实现的。
+			2. touch系列方法默认情况下由系统调用，如果想额外处理可重写touch系列方法；不要忘记调用super方法否则事件就中断在此无法向上传递。
+			3. touch事件的传递过程和Hit-Testing过程相反。
+				* Hit-Testing从父视图向子视图遍历。
+				* touch 事件是从子视图到父视图传递。
+		
+	6. 触摸事件产生和传递
 		1. 一个硬件事件发生之后，系统将该事件加入到UIApplication管理的事件队列。
 			1. IOKit.framework生成一个IOHIDEvent事件并由SpringBoard接收。
 			2. 随后用 mach port 转发给需要的App进程。
@@ -140,22 +167,22 @@ notebook: luolisheng 的笔记本
 		5. touches方法的默认做法是将事件顺着响应者链向上传递。如果第一响应者没有实现touches方法，那么就会根据响应链，把事件冒泡传递给nextResponder来响应。
 			1. touchesBegan里面设置按钮高亮。
 			2. touchEnded里面响应绑定的Action。sendAction:to:from:forEvent:
-	4. 不接受触摸事件的几种情况。
-		1. 不接收交互userInteractionEnabled = NO。
-		2. 隐藏 hidden=YES。
-		3. 透明。
-	5. 响应者链的事件传递过程
+	7. 不接受触摸事件的几种情况
+		1. 不接收交互userInteractionEnabled = NO.
+		2. 隐藏 hidden=YES.
+		3. 透明（0--0.01）.
+	8. 响应者链的事件传递过程
 		1. 当前view是控制器的view，控制器就是上一个响应者；当前这个view不是控制器的view，那么父控件就是上一个响应者。
 		2. 最顶层视图也不能处理接收到的事件则传递给window对象处理。
 		3. window对象也不处理则传递给UIApplication对象。
 		4. UIApplication也不能处理消息则将其丢弃。
-	6. 总结：触摸或者点击一个控件，然后这个事件会从上向下（从父->子）找最合适的view处理，找到这个view之后看他能不能处理。
+	9. 总结：触摸或者点击一个控件，然后这个事件会从上向下（从父->子）找最合适的view处理，找到这个view之后看他能不能处理。
 		能就处理，不能就按照事件响应链向上（从子->父）传递给父控件。
-	7. [link1](http://www.jianshu.com/p/82024d85c529)
-	8. [link2](http://zhoon.github.io/ios/2015/04/12/ios-event.html)
-	9. [link3](http://blog.flight.dev.qunar.com/2016/10/28/ios-event-mechanism-summary/)
-	10. [link4](http://www.cnblogs.com/klaus/archive/2013/04/22/3036692.html)
-	11. [link5](https://xiaozhuanlan.com/topic/1598036724)
+	10. [link1](http://www.jianshu.com/p/82024d85c529)
+	11. [link2](http://zhoon.github.io/ios/2015/04/12/ios-event.html)
+	12. [link3](http://blog.flight.dev.qunar.com/2016/10/28/ios-event-mechanism-summary/)
+	13. [link4](http://www.cnblogs.com/klaus/archive/2013/04/22/3036692.html)
+	14. [link5](https://xiaozhuanlan.com/topic/1598036724)
 5. 对象的浅拷贝和深拷贝
 	1. 非集合类对象的copy和mutableCopy
 		1. 非可变对象copy为浅复制
