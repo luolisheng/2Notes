@@ -120,9 +120,9 @@ notebook: luolisheng 的笔记本
 	13. [link3](http://www.jianshu.com/p/4d5b6fc33519)
 	14. [link4](https://yulingtianxia.com/blog/2017/09/17/Threading-Programming-Guide-2/)
 4. 事件传递及响应
-	1. 事件分三类：触摸事件、加速计事件、远程控制事件。
+	1. 事件分四类：触摸事件、运动事件、远程控制事件、按压事件。
 	2. 只有继承自UIResponder的对象才能接收并响应事件。
-	3.  触摸事件会把事件传递给事件发生的view，Motion和Remote事件会传递给当前的firstResponder。
+	3. 触摸事件会把事件传递给事件发生的view，Motion和Remote事件会传递给当前的firstResponder。
 	3. 触摸事件产生和传递。
 		1. 一个硬件事件发生之后，系统将该事件加入到UIApplication管理的事件队列。
 			1. IOKit.framework生成一个IOHIDEvent事件并由SpringBoard接收。
