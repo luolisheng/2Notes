@@ -208,9 +208,26 @@ notebook: luolisheng 的笔记本
 	* 概念
 		1. 线程用于指代一个独立执行的代码路径。
 		2. 进程用于指代一个可执行的程序，可以包含多个线程。
-		3. 当一个可执行程序有多个独立执行的代码路径是，就叫做多线程。
-
+		3. 当一个可执行程序有多个独立执行的代码路径时，就叫做多线程。
+	* 并发编程
+		1. 串行：固定时间内只能执行单个任务。
+		2. 并发：固定时间内执行多个任务。并发和并行区别在于，并发不会同时执行多个任务，而是在任务间不断切换完成所有任务。
+		3. 同步：把任务加入队列，任务执行完成后线程才返回继续运行，同步会阻塞线程。
+		4. 异步：把任务加入队列，线程立即返回继续运行，异步不会阻塞线程。
+	* GCD和Operation处理并发编程
+	* 并发编程中常见问题
+		1. 竞态条件：多线程对同一资源进行读写
+			* 串行队列加同步操作。（缺点速度慢，大量读写时候每次只能做一个读或写操作）
+			* 并发队列加barrier flag. 如dispatch_barrier.
+		2. 优先倒置：低优先级任务比高优先级先执行。
+			* 信号量
+		3. 死锁问题：两个或两个以上线程相互等待彼此，没有一方退出
+			* 避免两个Operation相互依赖。
+			* 避免串行队列进行异步任务时，嵌套同步任务。
 	1. [link1](https://www.jianshu.com/p/8ed06312d8bd)
+	2. [link2](https://www.jianshu.com/p/c2b14bb999de)
+	3. [link3](https://www.jianshu.com/p/39d6edb54d24)
+	4. [link4](https://github.com/ming1016/study/wiki/iOS%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B)
 7. 数组和链表
 	1. 数组特点
 		* 数组在内存中是连续的区域。
@@ -224,9 +241,9 @@ notebook: luolisheng 的笔记本
 		* 插入和删除数据效率高。
 		* 读取数据效率低，访问某个位置的数据都要从第一个数据开始。
 		* 扩展性好。
-	3. [link1](http://blog.devtang.com/2015/06/16/talk-about-tech-interview/)
-	4. [link2](http://www.cnblogs.com/manji/p/4903990.html)
-	5. [link3](http://www.jianshu.com/p/12fe060811f2)
+	3. [二叉树](http://www.cnblogs.com/manji/p/4903990.html)
+	4. [翻转二叉树](http://blog.devtang.com/2015/06/16/talk-about-tech-interview/)
+	5. [数组和链表](http://www.jianshu.com/p/12fe060811f2)
 8. 对象在内存中的位置
 	1. 编译时候，每个类都会生成一个描述其定义的对象，即类对象。
 	2. 类对象是单例，是运行时库来创建实例对象的依据。
@@ -240,8 +257,8 @@ notebook: luolisheng 的笔记本
 	3. app程序存放在ROM中，启动时系统把app从ROM转移到RAM中。
 	4. [link1](http://www.jianshu.com/p/746c747e7e00)
 	5. [虚拟内存](http://www.molotang.com/articles/2001.html)
-	6. [虚拟内存](http://www.gltech.win/ios%E5%BC%80%E5%8F%91/2018/01/16/%E6%8E%A2%E7%B4%A2iOS%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D.html)
-	7. [虚拟内存](https://yq.aliyun.com/articles/3065)
+	6. [虚拟内存](https://yq.aliyun.com/articles/3065)
+	7. [虚拟内存系列](http://www.gltech.win/ios%E5%BC%80%E5%8F%91/2018/01/16/%E6%8E%A2%E7%B4%A2iOS%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D.html)
 9. 消息转发机制
 	1. 动态方法解析会在消息转发机制侵入前执行，若想要消息转发机制被触发让resolveInstanceMethod:resolveClassMethod:返回NO。 
 		* respondsToSelector:或instancesRespondToSelector:会触发动态方法解析。
@@ -317,6 +334,7 @@ notebook: luolisheng 的笔记本
 	3. [link3](http://yulingtianxia.com/blog/2016/10/30/Optimizing-App-Startup-Time/)
 17. App安装路径和沙河路经的关系
 18. App签名验证（服务器验证/本地验证）
+	1. [link1](https://www.cnblogs.com/scott-mr/p/7207096.html)
 19. KVC/KVO实现原理
 20. 界面卡顿查找和出路方式
 21. 渲染CPU计算/GPU计算，渲染纹理/栅格化，drawrect减少内存占用
