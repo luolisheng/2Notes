@@ -328,7 +328,7 @@ notebook: luolisheng 的笔记本
 	* [link3](https://danleechina.github.io/ios-app-security-reinforce/)
 15. iOS系统组成架构，IOKit在系统架构中的位置，设备驱动位置
 	1. [link1](https://blog.ibireme.com/2015/05/18/runloop/)
-16. App启动流程
+16. App启动流程及优化
 	1. [link1](https://mp.weixin.qq.com/s/Kf3EbDIUuf0aWVT-UCEmbA)
 	2. [link2](https://blog.csdn.net/hello_hwc/article/details/78317863)
 	3. [link3](http://yulingtianxia.com/blog/2016/10/30/Optimizing-App-Startup-Time/)
@@ -346,12 +346,13 @@ notebook: luolisheng 的笔记本
 	1. [link1](http://southpeak.github.io/2015/03/20/cocoa-foundation-nsnotificationcenter/)
 	2. [link2](http://ios.jobbole.com/86885/)
 	3. [NSNotificationQueue](https://www.jianshu.com/p/051a9a3af1a4)
-26. UIImage
+26. UIImage(大图片的加载、内存峰值)
 	1. [link1](http://www.cnblogs.com/fengmin/p/5004945.html)
 27. 保持界面流畅
 	1. [link1](https://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/)
 	2. [link2](http://sonnewilling.com/blog/2016/10/19/iostu-xing-yuan-li-yu-chi-ping-xuan-ran/)
 	3. [link3](https://juejin.im/post/5b72aaf46fb9a009764bbb6a)
+28. 组件化(资源文件无法访问)
 
 ### 通用算法
 1. [查找1](http://www.cnblogs.com/Kobe10/p/6053131.html)
