@@ -322,23 +322,14 @@ notebook: luolisheng 的笔记本
 	7. [link2](http://foggry.com/blog/2017/02/06/wei-shi-yao-objective-c-dui-xiang-cun-chu-zai-dui-shang-er-bu-shi-zhan-shang/)
 	8. [link3](https://hit-alibaba.github.io/interview/basic/arch/Memory-Management.html#程序可执行文件的结构)
 	9. [link4](https://www.jianshu.com/p/746c747e7e00)
-14. 应用安全
-	1. 安全的传输用户密码
-		* 生成一对公私钥匙，客户端用共钥加密密码传输到服务器。
-		* 服务端用私钥将密码解密，然后加盐再多次求MD5。
-	2. 防止通讯协议被破解
-		* protobuf，对传输内容进行加密。	
-	3. 本地文件混淆和加密
-		* javascript 源码。
-		* 本地关键数据的加密存储、保存到keychain。
-	4. 源代码安全
-		* 关键逻辑用C来实现。
-		*  
-	* [link1](http://blog.devtang.com/2014/05/08/ios-security-dev-overview/)
-	* [link2](http://blog.devtang.com/2015/10/22/talk-with-zm-about-ios-security/)
-	* [link3](https://danleechina.github.io/ios-app-security-reinforce/)
-	* [安全攻防](https://blog.csdn.net/yiyaaixuexi/article/details/18222339)
-15. iOS系统组成架构，IOKit在系统架构中的位置，设备驱动位置
+14. KVC/KVO实现原理
+	1. [link1](https://www.jianshu.com/p/8ce4821ae97b)
+	2. [link2](https://blog.csdn.net/wzzvictory/article/details/9674431)
+15. Notification与多线程
+	1. [link1](http://southpeak.github.io/2015/03/20/cocoa-foundation-nsnotificationcenter/)
+	2. [link2](http://southpeak.github.io/2015/03/14/nsnotification-and-multithreading/)
+	3. [NSNotificationQueue](https://www.jianshu.com/p/051a9a3af1a4)
+16. iOS系统组成架构，IOKit在系统架构中的位置，设备驱动位置
 	1. 大致分为4层
 		* 应用层（用户能接触到的图形应用）
 		* 应用框架层（开发人员接触到的Cocoa等框架）
@@ -351,39 +342,48 @@ notebook: luolisheng 的笔记本
 			2. BSD围绕Mach的外环，提供进程管理、文件系统和网络等功能
 			3. IOKit层为设备驱动提供面向对象的框架
 	1. [link1](https://blog.ibireme.com/2015/05/18/runloop/)
-16. App启动流程及优化
+17. 应用安全
+	1. 安全的传输用户密码
+		* 生成一对公私钥匙，客户端用共钥加密密码传输到服务器。
+		* 服务端用私钥将密码解密，然后加盐再多次求MD5。
+	2. 防止通讯协议被破解
+		* protobuf，对传输内容进行加密。	
+	3. 本地文件混淆和加密
+		* javascript 源码。
+		* 本地关键数据的加密存储、保存到keychain。
+	4. 源代码安全
+		* 关键逻辑用C来实现。
+	* [link1](http://blog.devtang.com/2014/05/08/ios-security-dev-overview/)
+	* [link2](http://blog.devtang.com/2015/10/22/talk-with-zm-about-ios-security/)
+	* [link3](https://danleechina.github.io/ios-app-security-reinforce/)
+	* [安全攻防](https://blog.csdn.net/yiyaaixuexi/article/details/18222339)
+18. App启动流程及优化
 	1. [link1](https://mp.weixin.qq.com/s/Kf3EbDIUuf0aWVT-UCEmbA)
 	2. [link2](https://blog.csdn.net/hello_hwc/article/details/78317863)
 	3. [link3](http://yulingtianxia.com/blog/2016/10/30/Optimizing-App-Startup-Time/)
-17. App安装路径和沙河路经的关系
-18. App签名验证（服务器验证/本地验证）
+19. App安装路径和沙河路经的关系
+20. App签名验证（服务器验证/本地验证）
 	1. 开发时候如何签名、验证签名
 	2. 从商店下载如何签名、验证签名
 	3. 测试版、内测版如何签名、验证签名
 	1. [link1](https://www.cnblogs.com/scott-mr/p/7207096.html)
 	2. [link2](http://blog.cnbang.net/tech/3386/)
-19. KVC/KVO实现原理
-	1. [link1](https://www.jianshu.com/p/8ce4821ae97b)
-	2. [link2](https://blog.csdn.net/wzzvictory/article/details/9674431)
-20. 界面卡顿查找和出路方式
-21. 渲染CPU计算/GPU计算，渲染纹理/栅格化，drawrect减少内存占用
+21. 界面卡顿查找和出路方式
+22. 渲染CPU计算/GPU计算，渲染纹理/栅格化，drawrect减少内存占用
 	1. [link1](http://bihongbo.com/2016/01/03/memoryGhostdrawRect/)
-22. 系统动态库/内嵌动态库/main函数加载时机
-23. socket与服务器长连的心跳处理，http缓存
-24. 几大开源库的源码分析
-25. Notification与多线程
-	1. [link1](http://southpeak.github.io/2015/03/20/cocoa-foundation-nsnotificationcenter/)
-	2. [link2](http://ios.jobbole.com/86885/)
-	3. [NSNotificationQueue](https://www.jianshu.com/p/051a9a3af1a4)
-26. UIImage(大图片的加载、内存峰值)
+23. 系统动态库/内嵌动态库/main函数加载时机
+24. socket与服务器长连的心跳处理，http缓存
+25. UIImage(大图片的加载、内存峰值控制)
 	1. [link1](http://www.cnblogs.com/fengmin/p/5004945.html)
-27. 保持界面流畅
+26. 保持界面流畅
 	1. [link1](https://blog.ibireme.com/2015/11/12/smooth_user_interfaces_for_ios/)
 	2. [link2](http://sonnewilling.com/blog/2016/10/19/iostu-xing-yuan-li-yu-chi-ping-xuan-ran/)
 	3. [link3](https://juejin.im/post/5b72aaf46fb9a009764bbb6a)
-28. 组件化(资源文件无法访问)
+27. 组件化(资源文件无法访问)
+28. 几大开源库的源码分析
 29. HTTP
 	1. [link1](http://mrpeak.cn/blog/http-constitution/)
+	2. [link2](http://mrpeak.cn/blog/http-upload-progress/)
 	2. [流量分析和监控](http://zhoulingyu.com/2018/05/30/ios-network-traffic/)
 	3. [流量分析和监控](https://github.com/zhshijie/ImageSaveWarehouse/blob/master/iOS%20%E6%96%87%E6%A1%A3/iOS%20%E7%BD%91%E7%BB%9C%E6%B5%81%E9%87%8F%E7%9B%91%E6%8E%A7/iOS%20%E7%BD%91%E7%BB%9C%E6%B5%81%E9%87%8F%E7%9B%91%E6%8E%A7.md)
 
