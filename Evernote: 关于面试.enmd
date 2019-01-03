@@ -368,7 +368,7 @@ notebook: luolisheng 的笔记本
 	3. 测试版、内测版如何签名、验证签名
 	1. [link1](https://www.cnblogs.com/scott-mr/p/7207096.html)
 	2. [link2](http://blog.cnbang.net/tech/3386/)
-21. 界面卡顿查找和出路方式
+21. 界面卡顿查找和处理方式
 22. 渲染CPU计算/GPU计算，渲染纹理/栅格化，drawrect减少内存占用
 	1. [link1](http://bihongbo.com/2016/01/03/memoryGhostdrawRect/)
 23. 系统动态库/内嵌动态库/main函数加载时机
@@ -384,6 +384,7 @@ notebook: luolisheng 的笔记本
 29. HTTP
 	1. [link1](http://mrpeak.cn/blog/http-constitution/)
 	2. [link2](http://mrpeak.cn/blog/http-upload-progress/)
+	3. [link3](https://www.jianshu.com/p/379d3fa3d468)
 	2. [流量分析和监控](http://zhoulingyu.com/2018/05/30/ios-network-traffic/)
 	3. [流量分析和监控](https://github.com/zhshijie/ImageSaveWarehouse/blob/master/iOS%20%E6%96%87%E6%A1%A3/iOS%20%E7%BD%91%E7%BB%9C%E6%B5%81%E9%87%8F%E7%9B%91%E6%8E%A7/iOS%20%E7%BD%91%E7%BB%9C%E6%B5%81%E9%87%8F%E7%9B%91%E6%8E%A7.md)
 
