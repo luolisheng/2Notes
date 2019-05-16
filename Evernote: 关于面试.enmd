@@ -183,7 +183,6 @@ notebook: luolisheng 的笔记本
 	12. [link3](http://blog.flight.dev.qunar.com/2016/10/28/ios-event-mechanism-summary/)
 	13. [link4](http://www.cnblogs.com/klaus/archive/2013/04/22/3036692.html)
 	14. [link5](https://xiaozhuanlan.com/topic/1598036724)
-	15. [link6](https://juejin.im/entry/59a7b6e4f265da246f381d37)
 5. 对象的浅拷贝和深拷贝
 	1. 浅拷贝拷贝指针，深拷贝拷贝内容。
 	2. copy、mutableCopy和浅拷贝、深拷贝没有关系。
@@ -362,6 +361,7 @@ notebook: luolisheng 的笔记本
 	1. [link1](https://mp.weixin.qq.com/s/Kf3EbDIUuf0aWVT-UCEmbA)
 	2. [link2](https://blog.csdn.net/hello_hwc/article/details/78317863)
 	3. [link3](http://yulingtianxia.com/blog/2016/10/30/Optimizing-App-Startup-Time/)
+	4. [link4](https://juejin.im/post/5cd4e784f265da038733bc4b#heading-5)
 19. App安装路径和沙河路经的关系
 20. App签名验证（服务器验证/本地验证）
 	1. 开发时候如何签名、验证签名
