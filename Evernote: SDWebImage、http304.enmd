@@ -1,0 +1,17 @@
+---
+title: SDWebImage、http304
+tags: ["iOS"]
+notebook: iOS
+---
+
+### 参考
+
+1. [link1](https://juejin.im/post/5adeede8518825672f19839a)
+2. [link2](https://segmentfault.com/a/1190000004084801)
+3. [link3](https://mp.weixin.qq.com/s?__biz=MzI1MTE2NTE1Ng==&mid=2649517293&idx=1&sn=6fd88aadc274c8d14192ebff057ec8b8&chksm=f1efec66c698657065a13599294a244bcd8972b20c56d110d7044299e19d700486ec91801aa1#rd)
+
+### options:SDWebImageRefreshCached的作用
+
+1. 同时加载缓存（内存、磁盘）和网络
+2. 首次请求网络不带有If-None-Match（If-Modified-Since），服务器返回ETag（Last-Modified）
+3. 非首次请求网络带有If-None-Match，服务端根据If-None-Match判断静态资源是否更新
