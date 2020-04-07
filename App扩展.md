@@ -42,7 +42,7 @@ notebook: iOS
                 * ![extensionContext.inputItems](https://upload-images.jianshu.io/upload_images/1804600-a4324fc2bdd4ffad.png?imageMogr2/auto-orient/strip|imageView2/2/format/webp)
         * self.extensionContext取消关闭分享操作
     * 对默认分享界面进行扩展，类似微信分享
-    * 使用NSExtensionPrincipalClass替换默认分享界面
+    * 使用NSExtensionPrincipalClass替换默认分享界面，但是不能往下页面进行跳转了
     * 扩展和宿主应用共用代码
         * .m中开放给扩展target
         * .m中嵌套其他.m，考虑使用共用的framework
@@ -72,3 +72,4 @@ notebook: iOS
 2. [link2](https://www.jianshu.com/p/863ce6729455)
 3. [调试](https://www.jianshu.com/p/cca733aca3c6)
 4. [link3](https://blog.csdn.net/flg1554112450/article/details/80743441)
+5. [link4](https://www.shenhongbang.cc/jiluShareExtensiondekaifa.html)
