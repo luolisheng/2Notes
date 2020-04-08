@@ -26,11 +26,15 @@ notebook: iOS
         1. App Extension可以和主应用直接交互，需要通过主应用唤醒App Extension
         2. App Extension并不能和宿主应用直接交互，App Extension不依赖于宿主应用可以独立运行。
             * App Extension只可以通过固定的几个API来和宿主应用分享内容
-            * 只用Today Extension可以通过URL Scheme方式打开宿主应用
+            * 只有Today Extension、Message Extension可以通过URL Scheme方式打开宿主应用
             * ![detailed_communication](http://upload-images.jianshu.io/upload_images/1216322-3fb501c8a93ad3ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 5. 每一个App Extension和APP一样都包含一个Info.plist文件，用来描述Share Extension的基本配置信息
     * CFBundleDisplayName： 扩展显示名称
     * NSExtension：扩展主要配置
+    * extension point：每一个具有特定功能具体的extension
+    * 扩展不能在iOS设备中使用相机和麦克风，iMessage extension除外
+    * 扩展不能长期运行后台任务
+    * 扩展不能使用Air Drop接收数据，但可以发送数据
 6. Share Extension
     * NSExtension：配置分享支持的内容类型和数量
     * NSExtensionPrincipalClass：配置自己的主界面
@@ -73,3 +77,6 @@ notebook: iOS
 3. [调试](https://www.jianshu.com/p/cca733aca3c6)
 4. [link3](https://blog.csdn.net/flg1554112450/article/details/80743441)
 5. [link4](https://www.shenhongbang.cc/jiluShareExtensiondekaifa.html)
+6. [处理常见场景](https://juejin.im/post/5acefc0e6fb9a028e1205688#heading-46)
+7. [扩展默认分享界面](http://www.cocoachina.com/articles/19749)
+8. [共享代码](https://www.jianshu.com/p/34f605dd72e9)
