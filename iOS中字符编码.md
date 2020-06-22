@@ -1,7 +1,7 @@
 ---
 title: iOS中字符编码
 tags: iOS
-notebook: iOS 
+notebook: iOS
 ---
 
 ### iOS下的编码
@@ -29,5 +29,4 @@ notebook: iOS
 
 1. [link1](https://www.jianshu.com/p/1b3ecbc9b5c1)
 2. [link2](https://juejin.im/post/5dc3b9a46fb9a04a95289a84#heading-16)
-3. [link3](https://objccn.io/issue-9-1/)
-
+3. [NSString与Unicode](https://objccn.io/issue-9-1/)
