@@ -106,3 +106,6 @@ notebook: iOS
 3. [ES6 class](https://segmentfault.com/a/1190000007179203)
 4. [构造函数](https://juejin.im/post/5a694be551882573541c8f29)
 5. [React DevTools](https://zh-hans.reactjs.org/blog/2019/08/15/new-react-devtools.html)
+6. [调试](https://juejin.im/post/5ca899acf265da3097287681#heading-13)
+7. [调试](https://www.barretlee.com/blog/2019/03/18/debugging-in-vscode-tutorial/)
+8. [link](http://blog.cnbang.net/tech/3461/)
