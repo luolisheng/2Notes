@@ -13,6 +13,7 @@ notebook: iOS
 5. [Fastlane实战系列](https://zhuanlan.zhihu.com/p/22973035)
 6. [截图](https://zhuanlan.zhihu.com/p/20739972)
 7. [输出](https://icyleaf.com/2016/07/fastlane-in-action/)
+8. [批量更新](https://woohyuknrg.github.io/2016/08/24/spaceship/)
 
 ### 遇到问题
 
