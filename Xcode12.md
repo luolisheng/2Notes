@@ -11,6 +11,9 @@ notebook: iOS
 3. Xcode12为模拟器同时构建x86_64和arm64版本
 4. Xcode11中x86_64是默认添加不用手动填写，Xcode12需要手动填写
 5. Xcode11将arm64转换为模拟器x86_64，若排除arm64则不能在模拟器运行
+    1. Xcode12编译的SDK再Xcode11链接时，Build Settings和Pod配置文件中会多EXCLUDED_ARCHS选项，EXCLUDED_ARCHS会排除arm64
+    2. 删除Target下Build Settings下EXCLUDED_ARCHS中arm64
+    3. 删除Pods中Targets Support Files中XXX.debug.xcconfig->EXCLUDED_ARCHS中arm64
 
 ### 参考
 
