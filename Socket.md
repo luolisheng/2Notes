@@ -10,10 +10,9 @@ notebook: iOS
 2. TCP/IP五层模型
 <div><en-media hash="4696a7ea395500dafd2a4d687fd20ecc" type="image/jpeg"></en-media></div>
 
-
-5. TCP/IP协议中的应用层处理七层模型中的第五层、第六层和第七层的功能
-6. TCP/IP协议族包括运输层、网络层、链路层
-7. TCP/UDP区别
+3. TCP/IP协议中的应用层处理七层模型中的第五层、第六层和第七层的功能
+4. TCP/IP协议族包括运输层、网络层、链路层
+5. TCP/UDP区别
     * TCP：面向连接、传输可靠(保证数据正确性,保证数据顺序)、用于传输大量数据(流模式)、速度慢，建立连接需要开销较多(时间，系统资源)
     * UDP：面向非连接、传输不可靠、用于传输少量数据(数据包模式)、速度快
     * TCP是一种流模式的协议，UDP是一种数据报模式的协议
@@ -22,17 +21,16 @@ notebook: iOS
 
 ### 参考
 
-1. [详解1](http://www.jianshu.com/p/3e4f3de18e3b)
+1. [缓冲区](https://www.cnblogs.com/bigberg/p/7747419.html)
 2. [详解2](http://www.cnblogs.com/goodcandle/archive/2005/12/10/socket.html)
-3. [详解3](http://www.kuqin.com/shuoit/20150308/345099.html)
-4. [link2](https://github.com/ChenYilong/iOSBlog/blob/master/Tips/%E5%A4%A7%E8%AF%9DSocket.md)
-5. [link3(流socket和数据报socket)](http://blog.sina.com.cn/s/blog_436499570100zkku.html)
-6. [link4](http://www.admin10000.com/document/2937.html)
-7. [心跳包](https://zhidao.baidu.com/question/433173583116867724.html)
-8. [七层/五层](http://www.ha97.com/3215.html)
-9. [TCP粘包](http://blog.csdn.net/ce123_zhouwei/article/details/8976006)
-10. [SocketAPI](http://www.cnblogs.com/kesalin/archive/2013/04/13/cocoa_socket.html)
-11. [处理粘包](https://blog.csdn.net/fgx_123456/article/details/80031821)
-12. [处理粘包](https://draveness.me/whys-the-design-tcp-message-frame/#fn:1)
-13. [为什么拆分数据](https://draveness.me/whys-the-design-tcp-segment-ip-packet/)
-14. [为什么TCP需要三次握手](https://draveness.me/whys-the-design-tcp-three-way-handshake/)
+3. [link2](https://github.com/ChenYilong/iOSBlog/blob/master/Tips/%E5%A4%A7%E8%AF%9DSocket.md)
+4. [link3(流socket和数据报socket)](http://blog.sina.com.cn/s/blog_436499570100zkku.html)
+5. [心跳包](https://zhidao.baidu.com/question/433173583116867724.html)
+6. [七层/五层](http://www.ha97.com/3215.html)
+7. [TCP粘包](http://blog.csdn.net/ce123_zhouwei/article/details/8976006)
+8. [SocketAPI](http://www.cnblogs.com/kesalin/archive/2013/04/13/cocoa_socket.html)
+9. [处理粘包](https://blog.csdn.net/fgx_123456/article/details/80031821)
+10. [处理粘包](https://draveness.me/whys-the-design-tcp-message-frame/#fn:1)
+11. [为什么拆分数据](https://draveness.me/whys-the-design-tcp-segment-ip-packet/)
+12. [为什么TCP需要三次握手](https://draveness.me/whys-the-design-tcp-three-way-handshake/)
+13. [link](https://toutiao.io/posts/igenq9/preview)
