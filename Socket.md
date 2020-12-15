@@ -34,4 +34,5 @@ notebook: iOS
 10. [SocketAPI](http://www.cnblogs.com/kesalin/archive/2013/04/13/cocoa_socket.html)
 11. [处理粘包](https://blog.csdn.net/fgx_123456/article/details/80031821)
 12. [处理粘包](https://draveness.me/whys-the-design-tcp-message-frame/#fn:1)
-13. [拆分数据](https://draveness.me/whys-the-design-tcp-segment-ip-packet/)
+13. [为什么拆分数据](https://draveness.me/whys-the-design-tcp-segment-ip-packet/)
+14. [为什么TCP需要三次握手](https://draveness.me/whys-the-design-tcp-three-way-handshake/)
