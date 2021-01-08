@@ -19,3 +19,4 @@ notebook: iOS
 5. [link5](https://medium.com/developerinsider/ios12-password-autofill-automatic-strong-password-and-security-code-autofill-6e7db8da1810)
 6. [解决方案1](https://stackoverflow.com/questions/45452170/ios-11-disable-password-autofill-accessory-view-option)
 7. [干扰方案](https://blog.csdn.net/qq_15509071/article/details/89420737)
+8. [Apple](https://developer.apple.com/documentation/security/password_autofill/about_the_password_autofill_workflow)
