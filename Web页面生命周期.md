@@ -1,6 +1,6 @@
 ---
 title: Web页面生命周期
-tags: 
+tags: ['H5','h5']
 notebook: luolisheng 的笔记本
 ---
 

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "安卓学习.md",
+                "file": "CSS布局.md",
                 "mode": "source",
                 "source": false
               }
@@ -38,7 +38,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "byModifiedTime"
               }
             }
           },
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "安卓学习.md",
+                "file": "CSS布局.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "安卓学习.md",
+                "file": "CSS布局.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -115,7 +115,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": false
               }
             }
           },
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "安卓学习.md"
+                "file": "CSS布局.md"
               }
             }
           }
@@ -133,8 +133,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -148,6 +147,13 @@
   },
   "active": "7a012ee4aa28ea81",
   "lastOpenFiles": [
+    "安卓学习.md",
+    "前端学习.md",
+    "CSS布局.md",
+    "Web页面生命周期.md",
+    "ChatGPT.md",
+    "离屏渲染影响列表的新能.md",
+    "创建多少个线程合适.md",
     "720P.md",
     "Evernote: 编程能力的四种境界.md",
     "从输入URL到浏览器接收的过程中发生了什么事情？.md",
@@ -158,8 +164,6 @@
     "未命名 2.canvas",
     "Ruby、Node环境配置.md",
     "Ruby、Node、Python环境配置.md",
-    "创建多少个线程合适.md",
-    "安卓学习.md",
     "UITextView允许光标切换到任意位置.md",
     "Socket设置非阻塞connect、send、recv.md"
   ]
