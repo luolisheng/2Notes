@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "7645b75020ade4a2",
+        "id": "6d3ef85bdcfc4f34",
         "type": "tabs",
         "children": [
           {
-            "id": "7a012ee4aa28ea81",
+            "id": "19a8233d903176cf",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "CSS布局.md",
+                "file": "前端学习.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CSS布局.md",
+                "file": "前端学习.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CSS布局.md",
+                "file": "前端学习.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CSS布局.md"
+                "file": "前端学习.md"
               }
             }
           }
@@ -133,7 +133,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -145,12 +146,14 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "7a012ee4aa28ea81",
+  "active": "19a8233d903176cf",
   "lastOpenFiles": [
-    "安卓学习.md",
-    "前端学习.md",
-    "CSS布局.md",
     "Web页面生命周期.md",
+    "前端学习.md",
+    "2023-05-20.md",
+    "全埋点.md",
+    "CSS布局.md",
+    "安卓学习.md",
     "ChatGPT.md",
     "离屏渲染影响列表的新能.md",
     "创建多少个线程合适.md",
