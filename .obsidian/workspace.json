@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6d3ef85bdcfc4f34",
+        "id": "34bbbb003029b9d3",
         "type": "tabs",
         "children": [
           {
-            "id": "19a8233d903176cf",
+            "id": "be92193c9952aa01",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -129,12 +129,12 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -146,7 +146,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "19a8233d903176cf",
+  "active": "be92193c9952aa01",
   "lastOpenFiles": [
     "Web页面生命周期.md",
     "前端学习.md",
