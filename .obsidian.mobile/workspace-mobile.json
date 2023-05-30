@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "纯银小报童阅读笔记.md",
+                "file": "纯银小报童阅读笔记/纯银小报童阅读笔记.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "纯银小报童阅读笔记.md",
+            "file": "纯银小报童阅读笔记/纯银小报童阅读笔记.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "纯银小报童阅读笔记.md",
+            "file": "纯银小报童阅读笔记/纯银小报童阅读笔记.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -114,7 +114,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "纯银小报童阅读笔记.md"
+            "file": "纯银小报童阅读笔记/纯银小报童阅读笔记.md"
           }
         }
       }
@@ -131,9 +131,9 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "68e7ef896f6c3db0",
+  "active": "5ed7528382a115d0",
   "lastOpenFiles": [
-    "纯银小报童阅读笔记.md",
-    "未命名"
+    "纯银小报童阅读笔记",
+    "纯银小报童阅读笔记/纯银小报童阅读笔记.md"
   ]
 }
