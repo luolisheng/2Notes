@@ -129,8 +129,7 @@
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -146,7 +145,7 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "be92193c9952aa01",
+  "active": "4b842648c96f4e03",
   "lastOpenFiles": [
     "纯银小报童阅读笔记.md",
     "Web页面生命周期.md",
