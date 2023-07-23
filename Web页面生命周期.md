@@ -23,3 +23,4 @@ notebook: luolisheng 的笔记本
 2. [link2](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/DOMContentLoaded_event)
 3. [link3](https://www.cnblogs.com/dahe1989/p/11765066.html)
 4. [渲染](http://eux.baidu.com/blog/fe/Chrome%E7%9A%84First%20Paint)
+5. [window.onload](https://www.cnblogs.com/songyao666/p/17522140.html)
