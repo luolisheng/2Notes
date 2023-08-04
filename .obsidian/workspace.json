@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Web页面生命周期.md",
+                "file": "前端学习.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Web页面生命周期.md",
+                "file": "前端学习.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Web页面生命周期.md",
+                "file": "前端学习.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Web页面生命周期.md"
+                "file": "前端学习.md"
               }
             }
           }
@@ -145,8 +145,9 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "5ad793527f6b5bdf",
+  "active": "965a10e2575d4057",
   "lastOpenFiles": [
+    "Web页面生命周期.md",
     "前端学习.md",
     "Evernote: Exif.md",
     "纯银小报童阅读笔记/互联网中年危机.md",
@@ -155,7 +156,6 @@
     "未命名.md",
     "纯银小报童阅读笔记",
     "纯银小报童阅读笔记.md",
-    "Web页面生命周期.md",
     "2023-05-20.md",
     "全埋点.md",
     "CSS布局.md",
