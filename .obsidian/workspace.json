@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "前端学习.md",
+                "file": "苹果商务--ABM.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "微任务",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -65,7 +65,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "前端学习.md",
+                "file": "苹果商务--ABM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "前端学习.md",
+                "file": "苹果商务--ABM.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "前端学习.md"
+                "file": "苹果商务--ABM.md"
               }
             }
           }
@@ -133,7 +134,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -145,11 +147,13 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "965a10e2575d4057",
+  "active": "2cba32c5bb660b9d",
   "lastOpenFiles": [
-    "Web页面生命周期.md",
     "前端学习.md",
     "Evernote: Exif.md",
+    "ChatGPT.md",
+    "安卓学习.md",
+    "Web页面生命周期.md",
     "纯银小报童阅读笔记/互联网中年危机.md",
     "纯银小报童阅读笔记/中年人的变化.md",
     "纯银小报童阅读笔记/互联网下半场.md",
@@ -159,8 +163,6 @@
     "2023-05-20.md",
     "全埋点.md",
     "CSS布局.md",
-    "安卓学习.md",
-    "ChatGPT.md",
     "离屏渲染影响列表的新能.md",
     "创建多少个线程合适.md",
     "720P.md",
