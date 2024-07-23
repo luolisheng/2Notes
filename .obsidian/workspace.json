@@ -4,23 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "34bbbb003029b9d3",
+        "id": "112d217e081d7a5f",
         "type": "tabs",
         "children": [
           {
-            "id": "479181d49a105707",
+            "id": "29b20afdd12d6dd2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "前端学习.md",
-                "mode": "source",
+                "file": "前端模块化.md",
+                "mode": "preview",
                 "source": false
               }
             }
           },
           {
-            "id": "006684ae32e38e80",
+            "id": "8bf125a6d00383ad",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -171,22 +171,28 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "006684ae32e38e80",
+  "active": "8bf125a6d00383ad",
   "lastOpenFiles": [
-    "前端模块化.md",
     "阅读/起名三十六计.md",
+    "安卓学习.md",
+    "AI学习/向量数据库.md",
+    "AI学习/prompt 使用的重要性.md",
+    "AI学习",
+    "Rollup 打包.md",
+    "前端模块化.md",
+    "0df431adcbef7609336e419421dda3cc7cd99e50.png",
+    "Babel.md",
+    "MSE入门.md",
+    "前端学习.md",
     "纯银小报童阅读笔记/中年人的变化.md",
     "纯银小报童阅读笔记/互联网中年危机.md",
     "纯银小报童阅读笔记/互联网下半场.md",
     "Evernote: App程序间文档共享.md",
     "阅读",
-    "前端学习.md",
-    "MSE入门.md",
     "JSBridge.md",
     "pac.md",
     "Surge配置.md",
     "ChatGPT.md",
-    "安卓学习.md",
     "Evernote: Exif.md",
     "Evernote: App启动优化.md",
     "CSS布局.md",
@@ -197,10 +203,6 @@
     "苹果商务--ABM.md",
     "纯银小报童阅读笔记",
     "纯银小报童阅读笔记.md",
-    "2023-05-20.md",
-    "全埋点.md",
-    "离屏渲染影响列表的新能.md",
-    "创建多少个线程合适.md",
     "未命名 1.canvas",
     "未命名.canvas",
     "未命名 3.canvas",
